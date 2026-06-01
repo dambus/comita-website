@@ -1,6 +1,6 @@
 const NAV_ITEMS = ['about', 'projects', 'services', 'team', 'contact'] as const
 const PILLS = ['EPC', 'O&M', 'DIGITAL']
-const INFO_LINES = ['Comita Technics DOO Beograd', 'Licenses: I030G1 · I031M1', 'SR / EN / RU']
+const INFO_LINES = ['Beograd, Novi-Beograd', 'Bulevar Mihajla Pupina 115G', '+381 11 3818100', 'office@cmtech.rs']
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })

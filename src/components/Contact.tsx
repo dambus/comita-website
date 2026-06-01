@@ -4,7 +4,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 const DETAILS = [
   {
     label: 'Headquarters',
-    value: 'Belgrade, Serbia',
+    value: 'Beograd, Novi-Beograd\nBulevar Mihajla Pupina 115G',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -13,12 +13,21 @@ const DETAILS = [
     ),
   },
   {
-    label: 'Operations',
-    value: 'Serbia · Bulgaria · Region',
+    label: 'Phone',
+    value: '+381 11 3818100',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-        <polyline points="9,22 9,12 15,12 15,22" />
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Email',
+    value: 'office@cmtech.rs',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M2 6l10 7 10-7" />
       </svg>
     ),
   },
@@ -28,16 +37,6 @@ const DETAILS = [
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Languages',
-    value: 'Serbian · English · Russian',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
       </svg>
     ),
   },
