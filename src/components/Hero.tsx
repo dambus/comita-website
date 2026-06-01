@@ -49,23 +49,12 @@ export default function Hero() {
       {/* Pattern */}
       <CTPattern opacity={0.1} color="#5bc4f5" />
 
-      {/* Grid overlay */}
-      {/* <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: [
-            'repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.04) 79px, rgba(255,255,255,0.04) 80px)',
-            'repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.04) 79px, rgba(255,255,255,0.04) 80px)',
-          ].join(', '),
-        }}
-      /> */}
-
       {/* Main content */}
-      <div className="relative z-10 flex flex-col justify-center pt-sm-40 min-h-screen px-8 md:px-16 pb-32">
-        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-12 max-w-xl">
+      <div className="relative z-10 flex flex-col justify-center pt-24 sm:pt-32 md:pt-40 min-h-screen px-4 sm:px-8 md:px-16 pb-24 md:pb-32">
+        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-6 sm:p-8 md:p-12 max-w-xl">
           {/* Tag */}
           <p
-            className="text-sm tracking-[0.2em] text-[#5bc4f5] font-semibold mb-3"
+            className="text-xs tracking-[0.2em] text-[#5bc4f5] font-semibold mb-2 sm:mb-3"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             EPC · O&M · DIGITAL
@@ -73,7 +62,7 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className="font-['Barlow_Condensed'] text-6xl md:text-7xl font-bold leading-15 tracking-tight mb-4"
+            className="font-['Barlow_Condensed'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
             style={{ color: '#ffffff' }}
           >
             <span className="text-white block">Innovations</span>
@@ -85,17 +74,17 @@ export default function Hero() {
 
           {/* Subheading */}
           <p
-            className="text-white/75 text-base md:text-lg font-light max-w-lg mb-6"
+            className="text-white/75 text-sm sm:text-base md:text-lg font-light max-w-lg mb-4 sm:mb-6"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             Full-cycle engineering and maintenance for critical gas transmission infrastructure across the region.
           </p>
 
           {/* Buttons */}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <button
               onClick={() => scrollTo('projects')}
-              className="text-xs tracking-widest font-semibold px-6 py-3 cursor-pointer border-0 transition-opacity hover:opacity-90"
+              className="text-xs tracking-widest font-semibold px-4 sm:px-6 py-3 cursor-pointer border-0 transition-opacity hover:opacity-90 whitespace-nowrap"
               style={{
                 backgroundColor: '#5bc4f5',
                 color: '#0d2a5e',
@@ -106,7 +95,7 @@ export default function Hero() {
             </button>
             <button
               onClick={() => scrollTo('services')}
-              className="text-xs tracking-widest px-6 py-3 cursor-pointer bg-transparent transition-opacity hover:opacity-80"
+              className="text-xs tracking-widest px-4 sm:px-6 py-3 cursor-pointer bg-transparent transition-opacity hover:opacity-80 whitespace-nowrap"
               style={{
                 border: '1px solid rgba(91,196,245,0.4)',
                 color: '#5bc4f5',
@@ -121,19 +110,19 @@ export default function Hero() {
 
       {/* Stats bar */}
       <div
-        className="absolute bottom-0 left-0 right-0 bg-[#0d2a5e]/85 backdrop-blur-sm border-t border-white/10 py-8 px-8 md:px-16 "
+        className="absolute bottom-0 left-0 right-0 bg-[#0d2a5e]/85 backdrop-blur-sm border-t border-white/10 py-6 sm:py-8 px-4 sm:px-8 md:px-16"
         style={{ borderColor: 'rgba(255,255,255,0.1)' }}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-4 sm:gap-6">
           {STATS.map(({ value, label }) => (
             <div key={label} className="flex flex-col items-center">
               <span
-                className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold text-[#5bc4f5] leading-none"
+                className="font-['Barlow_Condensed'] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#5bc4f5] leading-none"
               >
                 {value}
               </span>
               <span
-                className="text-xs tracking-[0.15em] mt-2 block uppercase text-white/50"
+                className="text-[10px] sm:text-xs tracking-[0.15em] mt-1 sm:mt-2 block uppercase text-white/50"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
                 {label}
