@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
+import CTPattern from './CTPattern'
 
 interface Stat {
   value: string
@@ -63,16 +64,15 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="py-24 px-8 transition-all duration-700"
+      className="py-32 px-8 bg-[#f4f6fa]"
       style={{
-        backgroundColor: '#f4f6fa',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
+        transition: 'all 0.7s ease',
       }}
     >
       <div className="max-w-7xl mx-auto">
-
-        {/* Section header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <p
             className="text-xs tracking-[0.2em] font-semibold mb-3"
@@ -95,18 +95,18 @@ export default function Projects() {
         </div>
 
         {/* Project cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {PROJECTS.map((project) => (
-            <div
-              key={project.title}
-              className="bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
-            >
+            <div key={project.title} className="ct-panel-lg bg-white overflow-hidden">
               {/* Top band */}
-              <div className="relative px-8 py-6 overflow-hidden" style={{ backgroundColor: '#0d2a5e' }}>
+              <div
+                className="relative overflow-hidden min-h-[160px] px-8 py-8"
+                style={{ backgroundColor: '#0d2a5e' }}
+              >
                 <img
                   src={project.image}
                   alt=""
-                  className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  className="absolute inset-0 w-full h-full object-cover opacity-30"
                 />
                 <div className="relative z-10">
                   <p
@@ -122,8 +122,8 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p
-                    className="text-sm mt-1"
-                    style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'Barlow', sans-serif" }}
+                    className="text-sm mt-1 text-white/50"
+                    style={{ fontFamily: "'Barlow', sans-serif" }}
                   >
                     {project.subtitle}
                   </p>
@@ -131,7 +131,7 @@ export default function Projects() {
               </div>
 
               {/* Body */}
-              <div className="px-8 py-6">
+              <div className="px-8 py-8">
                 <p
                   className="text-gray-500 text-sm leading-relaxed mb-6"
                   style={{ fontFamily: "'Barlow', sans-serif" }}
@@ -139,36 +139,24 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Stats grid */}
-                <div className="grid grid-cols-2 gap-4">
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   {project.stats.map(({ value, label }) => (
-                    <div
-                      key={label}
-                      className="rounded p-4"
-                      style={{ backgroundColor: '#f4f6fa' }}
-                    >
+                    <div key={label} className="ct-panel-sm bg-[#f4f6fa] p-4">
                       <p
-                        className="text-2xl font-bold"
-                        style={{
-                          fontFamily: "'Barlow Condensed', sans-serif",
-                          color: '#0d2a5e',
-                        }}
+                        className="text-3xl font-bold text-[#0d2a5e]"
+                        style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                       >
                         {value}
                       </p>
-                      <p
-                        className="text-gray-400 text-xs tracking-wide mt-1"
-                        style={{ fontFamily: "'Barlow', sans-serif" }}
-                      >
-                        {label}
-                      </p>
+                      <p className="text-gray-400 text-xs tracking-wide mt-1">{label}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* Bottom note */}
+                {/* Note */}
                 <p
-                  className="text-xs text-gray-400 italic mt-6 pt-6"
+                  className="text-xs text-gray-400 italic pt-6"
                   style={{
                     borderTop: '1px solid #f3f4f6',
                     fontFamily: "'Barlow', sans-serif",
@@ -182,37 +170,39 @@ export default function Projects() {
         </div>
 
         {/* Operational excellence bar */}
-        <div
-          className="mt-12 rounded-lg px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
-          style={{ backgroundColor: '#0d2a5e' }}
-        >
-          <h3
-            className="text-2xl font-bold text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-          >
-            Operational Excellence 2021–2025
-          </h3>
+        <div className="ct-panel-lg bg-[#0d2a5e] py-12 px-8 md:px-16 w-full relative overflow-hidden">
+          <CTPattern opacity={0.06} color="#5bc4f5" />
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div>
+              <h3
+                className="text-3xl md:text-4xl font-bold text-white"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              >
+                Operational Excellence 2021–2025
+              </h3>
+              <div className="w-12 h-0.5 bg-[#5bc4f5] mt-2" />
+            </div>
 
-          <div className="flex gap-8 md:gap-12">
-            {OPS_STATS.map(({ value, label }) => (
-              <div key={label} className="flex flex-col items-center md:items-start">
-                <span
-                  className="text-xl font-bold"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#5bc4f5' }}
-                >
-                  {value}
-                </span>
-                <span
-                  className="text-xs tracking-wide mt-0.5"
-                  style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'Barlow', sans-serif" }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+              {OPS_STATS.map(({ value, label }) => (
+                <div key={label} className="flex flex-col items-center md:items-start">
+                  <span
+                    className="text-4xl font-bold text-[#5bc4f5]"
+                    style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                  >
+                    {value}
+                  </span>
+                  <span
+                    className="text-xs tracking-widest mt-1 text-white/50"
+                    style={{ fontFamily: "'Barlow', sans-serif" }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   )

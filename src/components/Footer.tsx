@@ -1,4 +1,4 @@
-const NAV_ITEMS = ['about', 'projects', 'services', 'team', 'partners', 'contact'] as const
+const NAV_ITEMS = ['about', 'projects', 'services', 'team', 'contact'] as const
 const PILLS = ['EPC', 'O&M', 'DIGITAL']
 const INFO_LINES = ['Comita Technics DOO Beograd', 'Licenses: I030G1 · I031M1', 'SR / EN / RU']
 
@@ -17,22 +17,9 @@ export default function Footer() {
           style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}
         >
 
-          {/* Column 1 — Brand */}
+          {/* Column 1 — Logo & tagline */}
           <div>
-            <div className="flex items-center gap-2.5">
-              <span
-                className="text-2xl font-bold leading-none"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#5bc4f5' }}
-              >
-                CT
-              </span>
-              <span
-                className="text-sm font-bold tracking-widest text-white"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-              >
-                COMITA TECHNICS
-              </span>
-            </div>
+            <img src="/logo/CT_logo_white.png" className="h-10 w-auto" alt="Comita Technics" />
             <p
               className="text-sm mt-3"
               style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'Barlow', sans-serif" }}
@@ -43,7 +30,7 @@ export default function Footer() {
               {PILLS.map((pill) => (
                 <span
                   key={pill}
-                  className="text-xs px-3 py-1 rounded-sm tracking-widest"
+                  className="text-xs px-3 py-1 tracking-widest"
                   style={{
                     backgroundColor: 'rgba(255,255,255,0.05)',
                     color: 'rgba(255,255,255,0.4)',
@@ -100,7 +87,7 @@ export default function Footer() {
               ))}
             </div>
             <span
-              className="inline-block text-xs px-3 py-1 rounded-sm tracking-wide mt-4"
+              className="inline-block text-xs px-3 py-1 tracking-wide mt-4"
               style={{
                 backgroundColor: 'rgba(91,196,245,0.1)',
                 color: '#5bc4f5',
@@ -119,14 +106,17 @@ export default function Footer() {
             className="text-xs"
             style={{ color: 'rgba(255,255,255,0.25)', fontFamily: "'Barlow', sans-serif" }}
           >
-            © 2025 Comita Technics DOO Beograd. All rights reserved.
+            © 2025 Comita Technics DOO Beograd
           </p>
-          <p
-            className="text-xs italic"
+          <a
+            href="https://milandjumic.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs transition-colors hover:text-white/50"
             style={{ color: 'rgba(255,255,255,0.25)', fontFamily: "'Barlow', sans-serif" }}
           >
-            Innovations creating the future.
-          </p>
+            Designed & Developed by milandjumic.dev
+          </a>
         </div>
 
       </div>

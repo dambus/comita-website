@@ -33,25 +33,9 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => scrollTo('home')}
-            className="flex items-center gap-2.5 bg-transparent border-0 cursor-pointer p-0"
+            className="flex items-center bg-transparent border-0 cursor-pointer p-0"
           >
-            <span
-              className="text-xl font-bold leading-none"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#5bc4f5' }}
-            >
-              CT
-            </span>
-            <div
-              className="flex flex-col leading-none"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-            >
-              <span className="text-[11px] font-bold tracking-widest text-white leading-tight">
-                COMITA
-              </span>
-              <span className="text-[11px] font-bold tracking-widest text-white leading-tight">
-                TECHNICS
-              </span>
-            </div>
+            <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-8 w-auto" alt="Comita Technics" />
           </button>
 
           {/* Desktop nav */}

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
+import CTPattern from './CTPattern'
 
 const PARTNERS = [
   'GASTRANS',
@@ -25,31 +26,30 @@ export default function Partners() {
     <section
       ref={ref}
       id="partners"
-      className="py-24 px-8 transition-all duration-700"
+      className="py-32 px-8 bg-[#f4f6fa]"
       style={{
-        backgroundColor: '#f4f6fa',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
+        transition: 'all 0.7s ease',
       }}
     >
       <div className="max-w-7xl mx-auto">
-
-        {/* Section header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <p
-            className="text-xs tracking-[0.2em] font-semibold mb-3"
-            style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
+            className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
+            style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             OUR PARTNERS
           </p>
           <h2
-            className="text-5xl font-bold"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#0d2a5e' }}
+            className="text-6xl font-bold text-[#0d2a5e] mb-3"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
             Proven Partnership
           </h2>
           <p
-            className="text-gray-400 text-base mt-3 max-w-xl mx-auto"
+            className="text-gray-500 text-lg max-w-xl mx-auto"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             Global-scale projects are only possible through strategic partnerships with leading industry companies.
@@ -57,11 +57,11 @@ export default function Partners() {
         </div>
 
         {/* Partners grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto mb-16">
           {PARTNERS.map((name) => (
             <div
               key={name}
-              className="bg-white border border-gray-100 rounded-lg px-6 py-5 flex items-center justify-center min-h-20 transition-all duration-300"
+              className="ct-panel-sm bg-white border border-gray-100 min-h-24 px-6 py-5 flex items-center justify-center text-base tracking-widest transition-all duration-300"
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(91,196,245,0.3)'
                 e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)'
@@ -72,7 +72,7 @@ export default function Partners() {
               }}
             >
               <span
-                className="text-sm tracking-widest text-center leading-tight"
+                className="text-center leading-tight"
                 style={{
                   fontFamily: "'Barlow Condensed', sans-serif",
                   fontWeight: 700,
@@ -87,23 +87,25 @@ export default function Partners() {
 
         {/* Quote block */}
         <div
-          className="mt-16 rounded-lg px-8 py-8 text-center max-w-3xl mx-auto"
-          style={{ backgroundColor: '#0d2a5e' }}
+          className="ct-panel bg-[#0d2a5e] py-12 px-12 max-w-3xl mx-auto relative overflow-hidden"
         >
+          <CTPattern opacity={0.04} color="#5bc4f5" />
+
+          <div className="w-16 h-0.5 bg-[#5bc4f5] mx-auto mb-8 relative z-10" />
+
           <p
-            className="text-3xl font-bold text-white"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+            className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold text-white text-center relative z-10"
           >
             "Together, we create infrastructure that lasts decades."
           </p>
+
           <p
-            className="text-sm tracking-widest mt-4"
-            style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
+            className="text-[#5bc4f5] text-sm tracking-[0.2em] mt-6 text-center relative z-10"
+            style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             — Comita Technics, 2025
           </p>
         </div>
-
       </div>
     </section>
   )
