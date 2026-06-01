@@ -2,20 +2,25 @@ import { useRef } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 import CTPattern from './CTPattern'
 
-const PARTNERS = [
-  'GASTRANS',
-  'SRBIJAGAS',
-  'BULGARTRANSGAZ',
-  'SIEMENS ENERGY',
-  'SAIPEM',
-  'ITP BRASIL',
-  'GENERALI',
-  'TERMOINŽENJERING',
-  'SBT',
-  'KBV DATACOM',
-  'ENERGOLAB',
-  'NEOPETRO SDN BHD',
-  'PROMONT GROUP',
+interface Partner {
+  name: string
+  logo: string | null
+}
+
+const PARTNERS: Partner[] = [
+  { name: 'GASTRANS', logo: '/logo/partners/Gastrans-logo-web-LATINICA-1.png' },
+  { name: 'SRBIJAGAS', logo: '/logo/partners/Srbijagas-logo.png' },
+  { name: 'BULGARTRANSGAZ', logo: '/logo/partners/bulgartransgaz-logo.png' },
+  { name: 'SIEMENS ENERGY', logo: '/logo/partners/siemens-energy-logo.png' },
+  { name: 'SAIPEM', logo: '/logo/partners/logo Saipem-positive-horizontal-RGB.png' },
+  { name: 'ITP BRASIL', logo: '/logo/partners/logo-itp-brasil.png' },
+  { name: 'GENERALI', logo: '/logo/partners/generali-logo-png_seeklogo-264627.png' },
+  { name: 'TERMOINŽENJERING', logo: '/logo/partners/termoinzenjering-logo.png' },
+  { name: 'SBT', logo: '/logo/partners/sbt-logo.png' },
+  { name: 'KBV DATACOM', logo: null },
+  { name: 'ENERGOLAB', logo: '/logo/partners/Energolab-logotip.png' },
+  { name: 'NEOPETRO SDN BHD', logo: '/logo/partners/NP-LOGO-WITH-WORD.png' },
+  { name: 'PROMONT GROUP', logo: '/logo/partners/promontgroup-logo.svg' },
 ]
 
 export default function Partners() {
@@ -26,7 +31,9 @@ export default function Partners() {
     <section
       ref={ref}
       id="partners"
-      className="py-32 px-8 bg-[#f4f6fa]"
+      // className="py-32 px-8 bg-[#f4f6fa]"
+      className="py-32 px-8 bg-white"
+
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
@@ -57,30 +64,31 @@ export default function Partners() {
         </div>
 
         {/* Partners grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto mb-16">
-          {PARTNERS.map((name) => (
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16 max-w-6xl mx-auto mb-16">
+          {PARTNERS.map(({ name, logo }) => (
             <div
               key={name}
-              className="ct-panel-sm bg-white border border-gray-100 min-h-24 px-6 py-5 flex items-center justify-center text-base tracking-widest transition-all duration-300"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(91,196,245,0.3)'
-                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#f3f4f6'
-                e.currentTarget.style.boxShadow = 'none'
-              }}
+              className="flex items-center justify-center transition-all duration-300"
+              style={{ flex: '0 1 calc(33.333% - 40px)', minHeight: '100px' }}
             >
-              <span
-                className="text-center leading-tight"
-                style={{
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 700,
-                  color: 'rgba(13,42,94,0.6)',
-                }}
-              >
-                {name}
-              </span>
+              {logo ? (
+                <img
+                  src={logo}
+                  alt={name}
+                  className="max-h-20 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-75 hover:opacity-100"
+                />
+              ) : (
+                <span
+                  className="text-center leading-tight text-sm tracking-widest"
+                  style={{
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 700,
+                    color: 'rgba(13,42,94,0.6)',
+                  }}
+                >
+                  {name}
+                </span>
+              )}
             </div>
           ))}
         </div>

@@ -31,10 +31,10 @@ export default function Hero() {
         className="absolute inset-0 bg-cover"
         style={{
           backgroundImage: "url('/images/horizontal-panoramic-view-pipeline-still-above-ground-blue-sky.jpg')",
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center 115%',
           backgroundAttachment: 'fixed',
           opacity: 0.6,
-          transform: `translateY(${scrollY * 0.5}px)`,
+          transform: `translateY(${scrollY * 0.4}px)`,
         }}
       />
 
@@ -47,10 +47,10 @@ export default function Hero() {
       />
 
       {/* Pattern */}
-      <CTPattern opacity={0.05} color="#5bc4f5" />
+      <CTPattern opacity={0.1} color="#5bc4f5" />
 
       {/* Grid overlay */}
-      <div
+      {/* <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: [
@@ -58,14 +58,14 @@ export default function Hero() {
             'repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.04) 79px, rgba(255,255,255,0.04) 80px)',
           ].join(', '),
         }}
-      />
+      /> */}
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col justify-center pt-40 min-h-screen px-8 md:px-16 pb-32">
-        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-8 max-w-xl">
+      <div className="relative z-10 flex flex-col justify-center pt-sm-40 min-h-screen px-8 md:px-16 pb-32">
+        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-12 max-w-xl">
           {/* Tag */}
           <p
-            className="text-xs tracking-[0.2em] text-[#5bc4f5] font-semibold mb-3"
+            className="text-sm tracking-[0.2em] text-[#5bc4f5] font-semibold mb-3"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             EPC · O&M · DIGITAL
@@ -73,7 +73,7 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className="font-['Barlow_Condensed'] text-6xl md:text-7xl font-bold leading-tight tracking-tight mb-4"
+            className="font-['Barlow_Condensed'] text-6xl md:text-7xl font-bold leading-15 tracking-tight mb-4"
             style={{ color: '#ffffff' }}
           >
             <span className="text-white block">Innovations</span>
@@ -121,7 +121,7 @@ export default function Hero() {
 
       {/* Stats bar */}
       <div
-        className="absolute bottom-0 left-0 right-0 bg-[#0d2a5e]/85 backdrop-blur-sm border-t border-white/10 py-8 px-8 md:px-16"
+        className="absolute bottom-0 left-0 right-0 bg-[#0d2a5e]/85 backdrop-blur-sm border-t border-white/10 py-8 px-8 md:px-16 "
         style={{ borderColor: 'rgba(255,255,255,0.1)' }}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-6">
