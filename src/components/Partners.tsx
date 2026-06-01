@@ -64,7 +64,7 @@ export default function Partners() {
         </div>
 
         {/* Partners grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto mb-16 justify-items-center">
           {PARTNERS.map(({ name, logo }) => (
             <div
               key={name}
