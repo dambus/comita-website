@@ -12,7 +12,7 @@ const PARTNERS: Partner[] = [
   { name: 'SRBIJAGAS', logo: '/logo/partners/Srbijagas-logo.png' },
   { name: 'BULGARTRANSGAZ', logo: '/logo/partners/bulgartransgaz-logo.png' },
   { name: 'SIEMENS ENERGY', logo: '/logo/partners/siemens-energy-logo.png' },
-  { name: 'SAIPEM', logo: '/logo/partners/logo Saipem-positive-horizontal-RGB.png' },
+  { name: 'SAIPEM', logo: '/logo/partners/logo-Saipem-positive-horizontal-RGB.png' },
   { name: 'ITP BRASIL', logo: '/logo/partners/logo-itp-brasil.png' },
   { name: 'GENERALI', logo: '/logo/partners/generali-logo-png_seeklogo-264627.png' },
   { name: 'TERMOINŽENJERING', logo: '/logo/partners/termoinzenjering-logo.png' },
@@ -64,22 +64,21 @@ export default function Partners() {
         </div>
 
         {/* Partners grid */}
-        <div className="flex flex-wrap justify-center gap-12 md:gap-16 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto mb-16">
           {PARTNERS.map(({ name, logo }) => (
             <div
               key={name}
-              className="flex items-center justify-center transition-all duration-300"
-              style={{ flex: '0 1 calc(33.333% - 40px)', minHeight: '100px' }}
+              className="flex items-center justify-center transition-all duration-300 min-h-48"
             >
               {logo ? (
                 <img
                   src={logo}
                   alt={name}
-                  className="max-h-20 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-75 hover:opacity-100"
+                  className="max-h-56 max-w-[95%] object-contain filter grayscale-[30%] hover:grayscale-0 transition-all duration-300 opacity-90 hover:opacity-100"
                 />
               ) : (
                 <span
-                  className="text-center leading-tight text-sm tracking-widest"
+                  className="text-center leading-tight text-sm tracking-widest px-4"
                   style={{
                     fontFamily: "'Barlow Condensed', sans-serif",
                     fontWeight: 700,
