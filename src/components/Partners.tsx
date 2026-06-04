@@ -45,13 +45,13 @@ export default function Partners() {
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            OUR PARTNERS
+            CLIENTS, PARTNERS & PROJECT REFERENCES
           </p>
           <h2
             className="text-6xl font-bold text-[#0d2a5e] mb-3"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Proven Partnership
+            Trusted by Major Industry Stakeholders
           </h2>
           <p
             className="text-gray-500 text-lg max-w-xl mx-auto"

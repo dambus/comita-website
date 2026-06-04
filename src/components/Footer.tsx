@@ -1,4 +1,5 @@
-const NAV_ITEMS = ['about', 'projects', 'services', 'team', 'contact'] as const
+import { NAV_LINKS } from './navigation'
+
 const PILLS = ['EPC', 'O&M', 'DIGITAL']
 const INFO_LINES = ['Beograd, Novi-Beograd', 'Bulevar Mihajla Pupina 165G', '+381 11 3818100', 'office@cmtech.rs']
 
@@ -52,16 +53,16 @@ export default function Footer() {
               Navigation
             </p>
             <div className="flex flex-col gap-2">
-              {NAV_ITEMS.map((id) => (
+              {NAV_LINKS.map(({ label, id }) => (
                 <button
                   key={id}
                   onClick={() => scrollTo(id)}
-                  className="text-sm text-left bg-transparent border-0 cursor-pointer p-0 transition-colors duration-200 capitalize"
+                  className="text-sm text-left bg-transparent border-0 cursor-pointer p-0 transition-colors duration-200"
                   style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'Barlow', sans-serif" }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff' }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
                 >
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                  {label}
                 </button>
               ))}
             </div>

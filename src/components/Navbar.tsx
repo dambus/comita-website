@@ -1,12 +1,5 @@
 import { useState, useEffect } from 'react'
-
-const NAV_LINKS = [
-  { label: 'ABOUT', id: 'about' },
-  { label: 'PROJECTS', id: 'projects' },
-  { label: 'SERVICES', id: 'services' },
-  { label: 'TEAM', id: 'team' },
-  { label: 'CONTACT', id: 'contact' },
-]
+import { NAV_LINKS } from './navigation'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,12 +32,12 @@ export default function Navbar() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map(({ label, id }) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className="text-xs tracking-widest text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer p-0"
+                className="text-xs tracking-wide text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer p-0 text-left"
                 style={{ fontFamily: "'Barlow', sans-serif" }}
               >
                 {label}
@@ -78,12 +71,12 @@ export default function Navbar() {
           >
             ×
           </button>
-          <div className="flex flex-col items-center gap-10">
+          <div className="flex flex-col items-center gap-8 px-8">
             {NAV_LINKS.map(({ label, id }) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className="text-2xl font-bold tracking-widest text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer"
+                className="text-2xl font-bold tracking-wide text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer text-center"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 {label}
