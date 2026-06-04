@@ -15,11 +15,12 @@ const PARTNERS: Partner[] = [
   { name: 'SAIPEM', logo: '/logo/partners/logo-Saipem-positive-horizontal-RGB.png' },
   { name: 'ITP BRASIL', logo: '/logo/partners/logo-itp-brasil.png' },
   { name: 'GENERALI', logo: '/logo/partners/generali-logo-png_seeklogo-264627.png' },
-  { name: 'TERMOINŽENJERING', logo: '/logo/partners/termoinzenjering-logo.png' },
+  { name: 'TERMOINZENJERING', logo: '/logo/partners/termoinzenjering-logo.png' },
   { name: 'SBT', logo: '/logo/partners/sbt-logo.png' },
   { name: 'KBV DATACOM', logo: null },
   { name: 'ENERGOLAB', logo: '/logo/partners/Energolab-logotip.png' },
-  { name: 'NEOPETRO SDN BHD', logo: '/logo/partners/NP-LOGO-WITH-WORD.png' },
+  // { name: 'NEOPETRO SDN BHD', logo: '/logo/partners/NP-LOGO-WITH-WORD.png' },
+  { name: 'NIS AD', logo: '/logo/partners/NIS-logo.png' },
   { name: 'PROMONT GROUP', logo: '/logo/partners/promontgroup-logo.svg' },
 ]
 
@@ -31,9 +32,7 @@ export default function Partners() {
     <section
       ref={ref}
       id="partners"
-      // className="py-32 px-8 bg-[#f4f6fa]"
       className="py-32 px-8 bg-white"
-
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
@@ -41,7 +40,6 @@ export default function Partners() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <p
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
@@ -63,7 +61,6 @@ export default function Partners() {
           </p>
         </div>
 
-        {/* Partners grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto mb-16 justify-items-center">
           {PARTNERS.map(({ name, logo }) => (
             <div
@@ -74,7 +71,7 @@ export default function Partners() {
                 <img
                   src={logo}
                   alt={name}
-                  className="max-h-56 max-w-[95%] object-contain filter grayscale-[30%] hover:grayscale-0 transition-all duration-300 opacity-90 hover:opacity-100"
+                  className="max-h-56 max-w-[95%] object-contain filter grayscale-[25%] hover:grayscale-0 transition-all duration-300 opacity-90 hover:opacity-100"
                 />
               ) : (
                 <span
@@ -92,17 +89,12 @@ export default function Partners() {
           ))}
         </div>
 
-        {/* Quote block */}
-        <div
-          className="ct-panel bg-[#0d2a5e] py-12 px-12 max-w-3xl mx-auto relative overflow-hidden"
-        >
+        <div className="ct-panel bg-[#0d2a5e] py-12 px-12 max-w-3xl mx-auto relative overflow-hidden">
           <CTPattern opacity={0.04} color="#5bc4f5" />
 
           <div className="w-16 h-0.5 bg-[#5bc4f5] mx-auto mb-8 relative z-10" />
 
-          <p
-            className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold text-white text-center relative z-10"
-          >
+          <p className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold text-white text-center relative z-10">
             "Together, we create infrastructure that lasts decades."
           </p>
 
@@ -110,7 +102,7 @@ export default function Partners() {
             className="text-[#5bc4f5] text-sm tracking-[0.2em] mt-6 text-center relative z-10"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            — Comita Technics, 2025
+            - Comita Technics DOO Beograd, 2025
           </p>
         </div>
       </div>

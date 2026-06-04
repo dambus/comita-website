@@ -135,8 +135,8 @@ export default function About() {
         >
           {/* Watermark logo */}
           <img
-            src="/logo/CT_logo_white.png"
-            className="absolute bottom-6 right-6 h-16 w-auto opacity-10"
+            src="/logo/CT_logo_white_text_blue_logo.png"
+            className="absolute bottom-6 right-6 h-10 w-auto opacity-10"
             alt=""
           />
 

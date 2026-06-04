@@ -35,7 +35,7 @@ export default function Navbar() {
             onClick={() => scrollTo('home')}
             className="flex items-center bg-transparent border-0 cursor-pointer p-0"
           >
-            <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-8 w-auto" alt="Comita Technics" />
+            <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-10 w-auto" alt="Comita Technics DOO Beograd" />
           </button>
 
           {/* Desktop nav */}

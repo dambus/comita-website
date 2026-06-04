@@ -4,7 +4,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 const DETAILS = [
   {
     label: 'Headquarters',
-    value: 'Beograd, Novi-Beograd\nBulevar Mihajla Pupina 115G',
+    value: 'Beograd, Novi-Beograd\nBulevar Mihajla Pupina 165G',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />

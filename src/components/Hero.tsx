@@ -30,10 +30,10 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover"
         style={{
-          backgroundImage: "url('/images/horizontal-panoramic-view-pipeline-still-above-ground-blue-sky.jpg')",
-          backgroundPosition: 'center 115%',
+          backgroundImage: "url('/images/Hero-bg.png')",
+          backgroundPosition: 'center 85%',
           backgroundAttachment: 'fixed',
-          opacity: 0.6,
+          opacity: 1,
           transform: `translateY(${scrollY * 0.4}px)`,
         }}
       />
@@ -42,16 +42,16 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(13,42,94,0.2) 0%, rgba(13,42,94,0.6) 50%, rgba(13,42,94,0.95) 100%)',
+          background: 'linear-gradient(to bottom, rgba(13,42,94,0.33) 0%, rgba(13,42,94,0.4) 50%, rgba(13,42,94,0.65) 100%)',
         }}
       />
 
       {/* Pattern */}
-      <CTPattern opacity={0.1} color="#5bc4f5" />
+      <CTPattern opacity={0.15} color="#5bc4f5" />
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col justify-center pt-24 sm:pt-32 md:pt-40 min-h-screen px-4 sm:px-8 md:px-16 pb-24 md:pb-32">
-        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-6 sm:p-8 md:p-12 max-w-xl">
+        <div className="ct-panel-lg bg-[#0d2a5e]/75 backdrop-blur-sm p-6 sm:p-8 md:p-12 max-w-2xl">
           {/* Tag */}
           <p
             className="text-xs tracking-[0.2em] text-[#5bc4f5] font-semibold mb-2 sm:mb-3"
@@ -62,14 +62,10 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className="font-['Barlow_Condensed'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
+            className="hero-headline font-['Barlow_Condensed'] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
             style={{ color: '#ffffff' }}
           >
-            <span className="text-white block">Innovations</span>
-            <span className="block" style={{ color: '#5bc4f5' }}>
-              creating the
-            </span>
-            <span className="text-white block">future.</span>
+            Engineering, Automation &amp; Maintenance for <span className="text-[#5bc4f5]">Critical Gas Infrastructure</span>.
           </h1>
 
           {/* Subheading */}
@@ -77,7 +73,7 @@ export default function Hero() {
             className="text-white/75 text-sm sm:text-base md:text-lg font-light max-w-lg mb-4 sm:mb-6"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            Full-cycle engineering and maintenance for critical gas transmission infrastructure across the region.
+            Full-cycle engineering, EPC support, operation and maintenance, SCADA and digital solutions for critical gas transmission and energy infrastructure.
           </p>
 
           {/* Buttons */}

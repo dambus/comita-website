@@ -1,6 +1,6 @@
 const NAV_ITEMS = ['about', 'projects', 'services', 'team', 'contact'] as const
 const PILLS = ['EPC', 'O&M', 'DIGITAL']
-const INFO_LINES = ['Beograd, Novi-Beograd', 'Bulevar Mihajla Pupina 115G', '+381 11 3818100', 'office@cmtech.rs']
+const INFO_LINES = ['Beograd, Novi-Beograd', 'Bulevar Mihajla Pupina 165G', '+381 11 3818100', 'office@cmtech.rs']
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -19,7 +19,7 @@ export default function Footer() {
 
           {/* Column 1 — Logo & tagline */}
           <div>
-            <img src="/logo/CT_logo_white.png" className="h-10 w-auto" alt="Comita Technics" />
+            <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-10 w-auto" alt="Comita Technics DOO Beograd" />
             <p
               className="text-sm mt-3"
               style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'Barlow', sans-serif" }}

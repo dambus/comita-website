@@ -2,15 +2,15 @@ import { useRef } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const PHOTO_STATS = [
-  { value: '28', label: 'Management & Admin' },
+  { value: '28', label: 'Management & Administrative' },
   { value: '18', label: 'Lead Engineers 24/7' },
   { value: '16', label: 'Field Technicians' },
 ]
 
 const TEAM_CARDS = [
   {
-    number: '26',
-    title: '26 · Administrative & Management',
+    number: '28',
+    title: '28 · Management & Administrative',
     text: 'Project management, finance, O&M planning, procurement, QA/QC, HSE — ensuring predictable operations.',
   },
   {
@@ -20,7 +20,7 @@ const TEAM_CARDS = [
   },
   {
     number: '16',
-    title: '16 · Skilled Technicians',
+    title: '16 · Field Technicians',
     text: 'Electricians, mechanics, and adjusters — the hands keeping the system running continuously.',
   },
 ]
@@ -44,7 +44,7 @@ export default function Team() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-24">
           <p
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
             style={{ fontFamily: "'Barlow', sans-serif" }}
@@ -52,7 +52,7 @@ export default function Team() {
             OUR TEAM
           </p>
           <h2
-            className="text-6xl font-bold text-[#0d2a5e] mb-3"
+            className="text-6xl font-bold text-[#0d2a5e] mb-4"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
             The Team That Builds
@@ -61,7 +61,11 @@ export default function Team() {
             className="text-gray-500 text-lg"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            60 top specialists — a true international team capable of handling projects of any complexity.
+            60+ specialists 💠
+            Strong safety performance 💠
+            High availability of maintained systems 💠
+            SLA-based maintenance and reporting 
+
           </p>
         </div>
 
@@ -71,7 +75,7 @@ export default function Team() {
           <div className="relative">
             <img
               src="/images/horizontal-workers-in-work-equipment-radial-blur-fade.jpg"
-              alt="Comita Technics team"
+              alt="Comita Technics DOO Beograd team"
               className="w-full h-[500px] object-cover"
               style={{ objectPosition: 'center 30%' }}
             />
@@ -120,7 +124,7 @@ export default function Team() {
                       right: 0,
                       top: 0,
                       transform: 'translateX(8px) translateY(-8px)',
-                      fontSize: '7rem',
+                      fontSize: 'calc(7rem + 1px)',
                       fontWeight: 700,
                       color: '#0d2a5e',
                       opacity: 0.06,
