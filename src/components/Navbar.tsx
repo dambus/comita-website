@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
-import { NAV_LINKS } from './navigation'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { NAV_LINKS, type NavLink } from './navigation'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -11,9 +15,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  const handleLink = (link: NavLink) => {
     setMobileOpen(false)
+
+    if (link.route) {
+      navigate(link.route)
+      return
+    }
+
+    if (location.pathname === '/') {
+      document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: link.id } })
+    }
   }
 
   return (
@@ -25,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 md:px-10 py-4">
           {/* Logo */}
           <button
-            onClick={() => scrollTo('home')}
+            onClick={() => handleLink({ label: 'Home', id: 'home' })}
             className="flex items-center bg-transparent border-0 cursor-pointer p-0"
           >
             <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-10 w-auto" alt="Comita Technics DOO Beograd" />
@@ -33,14 +47,26 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            {NAV_LINKS.map(({ label, id }) => (
+            {NAV_LINKS.map((link) => (
               <button
-                key={id}
-                onClick={() => scrollTo(id)}
-                className="text-xs tracking-wide text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer p-0 text-left"
-                style={{ fontFamily: "'Barlow', sans-serif" }}
+                key={link.id}
+                onClick={() => handleLink(link)}
+                className="text-xs tracking-wide transition-colors duration-200 bg-transparent border-0 cursor-pointer p-0 text-left"
+                style={{
+                  fontFamily: "'Barlow', sans-serif",
+                  color: link.route && location.pathname === link.route
+                    ? '#5bc4f5'
+                    : 'rgba(255,255,255,0.70)',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff' }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color =
+                    link.route && location.pathname === link.route
+                      ? '#5bc4f5'
+                      : 'rgba(255,255,255,0.70)'
+                }}
               >
-                {label}
+                {link.label}
               </button>
             ))}
           </div>
@@ -72,14 +98,19 @@ export default function Navbar() {
             ×
           </button>
           <div className="flex flex-col items-center gap-8 px-8">
-            {NAV_LINKS.map(({ label, id }) => (
+            {NAV_LINKS.map((link) => (
               <button
-                key={id}
-                onClick={() => scrollTo(id)}
-                className="text-2xl font-bold tracking-wide text-white/70 hover:text-white transition-colors duration-200 bg-transparent border-0 cursor-pointer text-center"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                key={link.id}
+                onClick={() => handleLink(link)}
+                className="text-2xl font-bold tracking-wide transition-colors duration-200 bg-transparent border-0 cursor-pointer text-center"
+                style={{
+                  fontFamily: "'Barlow Condensed', sans-serif",
+                  color: link.route && location.pathname === link.route
+                    ? '#5bc4f5'
+                    : 'rgba(255,255,255,0.70)',
+                }}
               >
-                {label}
+                {link.label}
               </button>
             ))}
           </div>

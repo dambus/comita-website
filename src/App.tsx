@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -9,11 +11,22 @@ import Partners from './components/Partners'
 import Sponsorships from './components/Sponsorships'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import SponsorshipsPage from './pages/SponsorshipsPage'
 
-export default function App() {
+function HomePage() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo
+    if (!scrollTo) return
+    const timer = setTimeout(() => {
+      document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' })
+    }, 50)
+    return () => clearTimeout(timer)
+  }, [location.state])
+
   return (
     <>
-      <Navbar />
       <Hero />
       <Services />
       <Projects />
@@ -23,7 +36,19 @@ export default function App() {
       <Partners />
       <Sponsorships />
       <Contact />
-      <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sponsorships" element={<SponsorshipsPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
