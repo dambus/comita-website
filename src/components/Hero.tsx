@@ -65,12 +65,12 @@ export default function Hero() {
             className="hero-headline font-['Barlow_Condensed'] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
             style={{ color: '#ffffff' }}
           >
-            Engineering, Automation &amp; Maintenance for <span className="text-[#5bc4f5]">Critical Gas Infrastructure</span>.
+            Engineering, Automation &amp; Maintenance for <span className="text-[#5bc4f5]">Gas Infrastructure</span>.
           </h1>
 
           {/* Subheading */}
           <p
-            className="text-white/75 text-sm sm:text-base md:text-lg font-light max-w-lg mb-4 sm:mb-6"
+            className="text-white/75 text-[15px] sm:text-[17px] md:text-lg font-light max-w-lg mb-4 sm:mb-6"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             Full-cycle engineering, EPC support, operation and maintenance, SCADA and digital solutions for critical gas transmission and energy infrastructure.

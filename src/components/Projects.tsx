@@ -19,7 +19,7 @@ interface ProjectCard {
 const PROJECTS: ProjectCard[] = [
   {
     tag: '2019 - 2020 · PIPELINE',
-    title: 'Balkan Stream Gas Pipeline',
+    title: 'Magistral Gas Pipeline',
     subtitle: 'A Project of International Significance',
     image: '/images/horizontal-aboveground-pipeline-in-nature-half-panoramic.jpg',
     description:
@@ -37,7 +37,7 @@ const PROJECTS: ProjectCard[] = [
     title: 'Velika Plana Compressor Station',
     subtitle: 'Engineering Excellence',
     description:
-      "COMITA delivered the station's technological core - automation, telemetry, fire and technical safety systems, and communications - all implemented with flawless quality.",
+      "Comita Technics DOO Beograd delivered the station's technological core - automation, telemetry, fire and technical safety systems, and communications - all implemented with flawless quality.",
     stats: [
       { value: '24 MW', label: 'Combined capacity' },
       { value: '20 ha', label: 'Site area' },
@@ -46,6 +46,20 @@ const PROJECTS: ProjectCard[] = [
     ],
     note: 'Realized: March 2021 -> September 2021 - on schedule',
     image: '/images/horizontal-aerial-view-plant-panoramic.jpg',
+  },
+  {
+    tag: '2020 · CONTROL CENTER',
+    title: 'MCC Novi Sad',
+    subtitle: 'Main Control Center',
+    image: '/images/horizontal-Projects_mcc_picture.png',
+    description: 'We constructed the Main Control Centre for the national gas pipeline in Serbia from scratch — a Control Centre marked by excellent design and technological supremacy, allowing smooth daily operations.',
+    stats: [
+      { value: 'EN 11064', label: 'Operator console standard' },
+      { value: '24/7', label: 'Operational environment' },
+      { value: 'SCADA', label: 'Automation system' },
+      { value: 'Novi Sad', label: 'Location' },
+    ],
+    note: 'Ergonomic design — built for critical infrastructure operations',
   },
 ]
 
@@ -79,18 +93,18 @@ export default function Projects() {
             Built to Last Decades
           </h2>
           <p
-            className="text-gray-400 text-base mt-3"
-            style={{ fontFamily: "'Barlow', sans-serif" }}
+            className="text-gray-400 mt-3"
+            style={{ fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
           >
             Comita Technics DOO Beograd was created as a result of a strategic association of leading specialists with many years of experience in implementing capital energy projects. Our team brings together the additional knowledge and unique experience needed to create a strategically important energy infrastructure at all stages of the project, providing comprehensive solutions based on the highest quality standards
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {PROJECTS.map((project) => (
-            <div key={project.title} className="ct-panel-lg bg-white overflow-hidden">
+            <div key={project.title} className="ct-panel-lg bg-white overflow-hidden flex flex-col">
               <div
-                className="relative overflow-hidden min-h-[160px] px-8 py-8"
+                className="relative overflow-hidden h-52 px-8 py-8 flex-shrink-0"
                 style={{ backgroundColor: '#0d2a5e' }}
               >
                 <img
@@ -112,8 +126,8 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p
-                    className="text-sm mt-1 text-white/50"
-                    style={{ fontFamily: "'Barlow', sans-serif" }}
+                    className="mt-1 text-white/50"
+                    style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                   >
                     {project.subtitle}
                   </p>

@@ -117,7 +117,7 @@ const WHO_CAN_APPLY = [
 ]
 
 const CRITERIA = [
-  "Alignment with Comita Technics' values and business principles",
+  "Alignment with Comita Technics DOO Beograd' values and business principles",
   'Social impact and public benefit',
   'Feasibility and transparency of the project',
   'Long-term sustainability of results',
@@ -128,26 +128,27 @@ const STEPS = [
   {
     num: '01',
     title: 'Send Your Request',
-    text: 'Send your sponsorship or donation request directly via email to donations@comitatechnics.com with a brief description of your organization and initiative.',
-    email: true,
+    text: 'Submit a sponsorship or donation request using the online application form. Download and complete the required documents listed below.',
   },
   {
     num: '02',
     title: 'Provide Details',
-    text: 'Provide detailed information about the organization, project objectives, expected outcomes, and funding requirements.',
-    email: false,
+    text: 'Provide detailed information about the organization, project objectives, expected outcomes, and funding requirements. Attach the completed documents from the list below.',
+    documents: [
+      { label: 'Application Form', file: '/documents/prijava-sponzorstvo-donacija.docx' },
+      { label: 'Budget Specification', file: '/documents/specifikacija-budzeta.docx' },
+      { label: 'Required Documentation Checklist', file: '/documents/spisak-dokumentacije.docx' },
+    ],
   },
   {
     num: '03',
     title: 'Review Process',
     text: 'Our team reviews the application and may request additional information if necessary.',
-    email: false,
   },
   {
     num: '04',
     title: 'Decision',
     text: 'Applicants are informed of the decision following the evaluation process.',
-    email: false,
   },
 ]
 
@@ -242,20 +243,20 @@ export default function SponsorshipsPage() {
             className="mb-10 max-w-xl leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.72)', fontSize: 'clamp(16px, 1.5vw, 18px)', fontFamily: "'Barlow', sans-serif" }}
           >
-            Comita Technics is committed to responsible business practices and contributing to
+            Comita Technics DOO Beograd is committed to responsible business practices and contributing to
             the sustainable development of the communities in which we operate. Through sponsorships
             and donations, we support projects that promote education, safety, environmental
             protection, innovation, and social well-being.
           </p>
           <div className="flex gap-4 flex-wrap mb-16">
             <a
-              href="#sp-about"
+              href="#sp-process"
               className="inline-flex items-center gap-2 font-semibold px-6 py-3 transition-all duration-200"
               style={{ backgroundColor: '#5bc4f5', color: '#0d2a5e', fontSize: '15px', fontFamily: "'Barlow', sans-serif", textDecoration: 'none' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#3aafde' }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#5bc4f5' }}
             >
-              Learn About Our Program <IconArrowDown />
+              Apply Now <IconArrowDown />
             </a>
             <button
               onClick={scrollToContact}
@@ -266,6 +267,16 @@ export default function SponsorshipsPage() {
             >
               Get in Touch <IconArrowRight />
             </button>
+            <a
+              href="/documents/prijava-sponzorstvo-donacija.docx"
+              download
+              className="inline-flex items-center gap-2 font-semibold px-6 py-3 transition-all duration-200"
+              style={{ backgroundColor: 'transparent', color: '#5bc4f5', border: '1.5px solid rgba(91,196,245,0.6)', fontSize: '15px', fontFamily: "'Barlow', sans-serif", textDecoration: 'none' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(91,196,245,0.1)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent' }}
+            >
+              Download Application <IconArrowDown />
+            </a>
           </div>
         </div>
 
@@ -327,7 +338,7 @@ export default function SponsorshipsPage() {
               About Our Sponsorship and Donation Program
             </h2>
             <p className="text-[#4a5568] mb-4 leading-relaxed" style={{ fontSize: '17px', fontFamily: "'Barlow', sans-serif" }}>
-              Comita Technics is a company specializing in technical maintenance, engineering services,
+              Comita Technics DOO Beograd is a company specializing in technical maintenance, engineering services,
               and critical infrastructure support. We recognize that our work shapes not just energy
               systems — but the communities around them.
             </p>
@@ -351,7 +362,7 @@ export default function SponsorshipsPage() {
           <div>
             <img
               src="/images/sponsorship/Sponsor%20page%20pic%202-3.png"
-              alt="Comita Technics engineers and community engagement"
+              alt="Comita Technics DOO Beograd engineers and community engagement"
               className="w-full object-cover ct-panel"
               style={{ height: '380px' }}
             />
@@ -402,19 +413,23 @@ export default function SponsorshipsPage() {
             {AREAS.map((area, i) => (
               <div
                 key={area.title}
-                className="bg-white p-8 cursor-default transition-all duration-200"
+                className="bg-white p-8 cursor-default transition-all duration-200 relative overflow-hidden"
                 style={{ borderLeft: '4px solid rgba(13,42,94,0.12)', transitionDelay: `${i * 0.05}s` }}
                 onMouseEnter={cardIn}
                 onMouseLeave={cardOut}
                 role="listitem"
               >
-                <div className="w-12 h-12 flex items-center justify-center mb-5 text-[#0d2a5e]" style={{ backgroundColor: 'rgba(13,42,94,0.06)' }}>
+                <div
+                  className="absolute top-4 right-4 text-[#0d2a5e] pointer-events-none select-none"
+                  style={{ opacity: 0.06, transform: 'scale(5.5)', transformOrigin: 'top right' }}
+                  aria-hidden="true"
+                >
                   {area.icon}
                 </div>
-                <h3 className="font-bold text-[#0d2a5e] mb-2 leading-snug" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '20px' }}>
+                <h3 className="font-bold text-[#0d2a5e] mb-2 leading-snug relative z-10" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '20px' }}>
                   {area.title}
                 </h3>
-                <p className="text-[#4a5568] leading-relaxed" style={{ fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}>
+                <p className="text-[#4a5568] leading-relaxed relative z-10" style={{ fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}>
                   {area.text}
                 </p>
               </div>
@@ -437,10 +452,14 @@ export default function SponsorshipsPage() {
                 aria-hidden="true"
               />
               <div className="relative z-10 p-8 flex flex-col justify-end h-full" style={{ minHeight: '260px' }}>
-                <div className="w-12 h-12 flex items-center justify-center mb-5 text-[#5bc4f5]" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}>
+                <div
+                  className="absolute top-4 right-4 text-white pointer-events-none select-none"
+                  style={{ opacity: 0.08, transform: 'scale(5.5)', transformOrigin: 'top right' }}
+                  aria-hidden="true"
+                >
                   <IconLandmark />
                 </div>
-                <h3 className="font-bold text-white mb-2 leading-snug" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '24px' }}>
+                <h3 className="font-bold text-white mb-2 leading-snug relative z-10" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '24px' }}>
                   Cultural &amp; Religious Heritage
                 </h3>
                 <p className="leading-relaxed mb-3" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}>
@@ -482,7 +501,7 @@ export default function SponsorshipsPage() {
                 Who Can Apply
               </h3>
               <p className="text-[#4a5568] mb-5 leading-relaxed" style={{ fontSize: '16px', fontFamily: "'Barlow', sans-serif" }}>
-                Comita Technics considers applications from:
+                Comita Technics DOO Beograd considers applications from:
               </p>
               <ul className="flex flex-col gap-3" role="list">
                 {WHO_CAN_APPLY.map(item => (
@@ -554,58 +573,78 @@ export default function SponsorshipsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative" role="list">
-            {/* Connector line (desktop only) */}
+          <div className="relative max-w-3xl mx-auto">
+            {/* Vertical timeline line */}
             <div
-              className="hidden lg:block absolute h-0.5 z-0 pointer-events-none"
-              style={{
-                top: '28px',
-                left: 'calc(12.5% + 28px)',
-                right: 'calc(12.5% + 28px)',
-                background: 'linear-gradient(to right, #5bc4f5 0%, rgba(91,196,245,0.3) 100%)',
-              }}
+              className="absolute top-7 bottom-7 w-px pointer-events-none"
+              style={{ left: '27px', backgroundColor: 'rgba(91,196,245,0.22)' }}
               aria-hidden="true"
             />
-            {STEPS.map((step, i) => (
-              <div
-                key={step.num}
-                className="bg-white p-7 relative z-10 transition-all duration-200 cursor-default"
-                onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLDivElement
-                  el.style.transform = 'translateY(-4px)'
-                  el.style.boxShadow = '0 12px 32px rgba(13,42,94,0.10)'
-                }}
-                onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLDivElement
-                  el.style.transform = 'translateY(0)'
-                  el.style.boxShadow = 'none'
-                }}
-                style={{ transitionDelay: `${i * 0.08}s` }}
-                role="listitem"
-              >
-                <div
-                  className="w-14 h-14 flex items-center justify-center mb-6 font-bold relative z-20 shrink-0"
-                  style={{ backgroundColor: '#0d2a5e', fontFamily: "'Barlow Condensed', sans-serif", fontSize: '24px', color: '#5bc4f5' }}
-                >
-                  {step.num}
+
+            <div className="flex flex-col gap-6" role="list">
+              {STEPS.map((step) => (
+                <div key={step.num} className="flex gap-6 items-start" role="listitem">
+
+                  {/* Number badge */}
+                  <div
+                    className="shrink-0 w-14 h-14 flex items-center justify-center font-bold relative z-10"
+                    style={{ backgroundColor: '#0d2a5e', fontFamily: "'Barlow Condensed', sans-serif", fontSize: '24px', color: '#5bc4f5' }}
+                  >
+                    {step.num}
+                  </div>
+
+                  {/* Content card */}
+                  <div
+                    className="flex-1 bg-white p-7 cursor-default transition-shadow duration-200"
+                    onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(13,42,94,0.09)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
+                  >
+                    <h3
+                      className="font-bold text-[#0d2a5e] mb-2"
+                      style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '22px' }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p
+                      className="text-[#4a5568] leading-relaxed"
+                      style={{ fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}
+                    >
+                      {step.text}
+                    </p>
+
+                    {step.documents && (
+                      <div className="mt-5 pt-5" style={{ borderTop: '1px solid rgba(13,42,94,0.07)' }}>
+                        <p
+                          className="text-xs tracking-widest font-semibold mb-4"
+                          style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
+                        >
+                          REQUIRED DOCUMENTS
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
+                          {step.documents.map(doc => (
+                            <a
+                              key={doc.label}
+                              href={doc.file}
+                              download
+                              className="inline-flex items-center gap-2 font-semibold px-4 py-2.5 transition-all duration-200"
+                              style={{ backgroundColor: '#f4f6fa', color: '#0d2a5e', fontSize: '13px', fontFamily: "'Barlow', sans-serif", border: '1px solid rgba(13,42,94,0.12)', textDecoration: 'none' }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#e8f1fc'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#5bc4f5' }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#f4f6fa'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(13,42,94,0.12)' }}
+                            >
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                              </svg>
+                              {doc.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                 </div>
-                <h3 className="font-bold text-[#0d2a5e] mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '20px' }}>
-                  {step.title}
-                </h3>
-                <p className="text-[#4a5568] leading-relaxed" style={{ fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}>
-                  {step.email
-                    ? <>
-                        Send your sponsorship or donation request directly via email to{' '}
-                        <a href="mailto:donations@comitatechnics.com" className="underline text-[#0d2a5e]">
-                          donations@comitatechnics.com
-                        </a>{' '}
-                        with a brief description of your organization and initiative.
-                      </>
-                    : step.text
-                  }
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -628,7 +667,7 @@ export default function SponsorshipsPage() {
               Important Information
             </h3>
             <p className="text-[#4a5568] mb-3" style={{ fontSize: '15px', fontFamily: "'Barlow', sans-serif" }}>
-              Comita Technics reserves the right to:
+              Comita Technics DOO Beograd reserves the right to:
             </p>
             <ul className="flex flex-col gap-1 mb-4">
               {[
@@ -647,7 +686,7 @@ export default function SponsorshipsPage() {
               ))}
             </ul>
             <p className="italic text-[#4a5568]" style={{ fontSize: '14px', fontFamily: "'Barlow', sans-serif" }}>
-              Submission of an application does not constitute an obligation on the part of Comita Technics to provide sponsorship or financial support.
+              Submission of an application does not constitute an obligation on the part of Comita Technics DOO Beograd to provide sponsorship or financial support.
             </p>
           </div>
         </div>
@@ -678,14 +717,13 @@ export default function SponsorshipsPage() {
             className="mb-10 max-w-xl mx-auto leading-relaxed"
             style={{ color: 'rgba(255,255,255,0.70)', fontSize: '17px', fontFamily: "'Barlow', sans-serif" }}
           >
-            To apply or to learn more about our program, reach out to our team directly by email.
+            To apply, download the required documents, complete the application form, and send it along with the supporting materials to our team.
             We review all inquiries and will respond as soon as possible.
           </p>
 
           {/* Contact items */}
           <div className="flex justify-center gap-8 flex-wrap mb-10">
             {[
-              { icon: <IconMail />, href: 'mailto:donations@comitatechnics.com', label: 'donations@comitatechnics.com' },
               { icon: <IconMail />, href: 'mailto:office@cmtech.rs', label: 'office@cmtech.rs' },
               { icon: <IconPhone />, href: 'tel:+381113818100', label: '+381 (11) 3818100' },
             ].map(item => (
@@ -706,13 +744,13 @@ export default function SponsorshipsPage() {
           {/* CTA buttons */}
           <div className="flex justify-center gap-4 flex-wrap">
             <a
-              href="mailto:donations@comitatechnics.com"
+              href="mailto:office@cmtech.rs"
               className="inline-flex items-center gap-2 font-semibold px-6 py-3 transition-all duration-200"
               style={{ backgroundColor: '#5bc4f5', color: '#0d2a5e', fontSize: '15px', fontFamily: "'Barlow', sans-serif", textDecoration: 'none' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#3aafde' }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#5bc4f5' }}
             >
-              Send an Email <IconMail size={16} />
+              Send Application <IconMail size={16} />
             </a>
             <button
               onClick={() => navigate('/', { state: { scrollTo: 'sponsorships' } })}

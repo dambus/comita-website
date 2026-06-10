@@ -147,8 +147,8 @@ export default function Team() {
                     </h4>
                     <div className="w-8 h-0.5 bg-[#5bc4f5] mb-3" />
                     <p
-                      className="text-gray-500 text-sm leading-relaxed"
-                      style={{ fontFamily: "'Barlow', sans-serif" }}
+                      className="text-gray-500 leading-relaxed"
+                      style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                     >
                       {card.text}
                     </p>
@@ -169,7 +169,7 @@ export default function Team() {
                 </span>
               ))}
             </div>
-            <p className="text-gray-400 text-sm" style={{ fontFamily: "'Barlow', sans-serif" }}>
+            <p className="text-gray-400" style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}>
               Multilingual team — direct communication with clients and partners.
             </p>
           </div>

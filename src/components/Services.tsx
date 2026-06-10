@@ -164,8 +164,8 @@ export default function Services() {
 
               {/* Description */}
               <p
-                className="text-white/75 text-sm leading-relaxed mb-4"
-                style={{ fontFamily: "'Barlow', sans-serif" }}
+                className="text-white/75 leading-relaxed mb-4"
+                style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
               >
                 {service.description}
               </p>
@@ -175,8 +175,8 @@ export default function Services() {
                 {service.items.map((item) => (
                   <li
                     key={item}
-                    className="text-white/65 text-sm"
-                    style={{ fontFamily: "'Barlow', sans-serif" }}
+                    className="text-white/65"
+                    style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                   >
                     — {item}
                   </li>

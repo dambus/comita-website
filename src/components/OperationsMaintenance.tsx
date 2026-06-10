@@ -43,10 +43,10 @@ export default function OperationsMaintenance() {
             Continuous Reliability in Critical Systems
           </h2>
           <p
-            className="text-gray-500 text-base max-w-3xl mx-auto"
-            style={{ fontFamily: "'Barlow', sans-serif" }}
+            className="text-gray-500 max-w-3xl mx-auto"
+            style={{ fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
           >
-            Long-term operation and maintenance programs with preventive diagnostics, rapid interventions, and disciplined SLA delivery across critical gas infrastructure.
+            Long-term operation and maintenance programs with preventive diagnostics, rapid interventions, and disciplined SLA delivery across gas infrastructure.
           </p>
         </div>
 
@@ -88,8 +88,8 @@ export default function OperationsMaintenance() {
               {OPS_SUBTEXTS.map((text) => (
                 <p
                   key={text}
-                  className="ct-panel-sm bg-white/8 border border-white/10 border-l-4 border-l-[#5bc4f5] px-5 py-4 text-sm text-white/88 leading-relaxed backdrop-blur-sm"
-                  style={{ fontFamily: "'Barlow', sans-serif" }}
+                  className="ct-panel-sm bg-white/8 border border-white/10 border-l-4 border-l-[#5bc4f5] px-5 py-4 text-white/88 leading-relaxed backdrop-blur-sm"
+                  style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                 >
                   {text}
                 </p>

@@ -81,10 +81,10 @@ export default function Sponsorships() {
               Preserving Heritage.
             </h2>
             <p
-              className="text-base mb-8 max-w-lg leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.70)', fontFamily: "'Barlow', sans-serif" }}
+              className="mb-8 max-w-lg leading-relaxed"
+              style={{ color: 'rgba(255,255,255,0.70)', fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
             >
-              Comita Technics believes that technical excellence and social responsibility go hand in hand.
+              Comita Technics DOO Beograd believes that technical excellence and social responsibility go hand in hand.
               Through our sponsorship and donation program, we support education, cultural heritage,
               environmental protection, and community development across the region.
             </p>
@@ -136,8 +136,8 @@ export default function Sponsorships() {
                     {card.title}
                   </h3>
                   <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: 'rgba(255,255,255,0.60)', fontFamily: "'Barlow', sans-serif" }}
+                    className="leading-relaxed"
+                    style={{ color: 'rgba(255,255,255,0.60)', fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                   >
                     {card.text}
                   </p>

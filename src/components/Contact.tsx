@@ -75,8 +75,8 @@ export default function Contact() {
             That Lasts.
           </h2>
           <p
-            className="text-gray-500 text-base leading-relaxed max-w-md mb-10"
-            style={{ fontFamily: "'Barlow', sans-serif" }}
+            className="text-gray-500 leading-relaxed max-w-md mb-10"
+            style={{ fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
           >
             We are always open to discussing new projects, engineering challenges, and partnership opportunities across the region and beyond.
           </p>
@@ -95,8 +95,8 @@ export default function Contact() {
                     {label}
                   </p>
                   <p
-                    className="text-sm text-gray-500 mt-0.5"
-                    style={{ fontFamily: "'Barlow', sans-serif" }}
+                    className="text-gray-500 mt-0.5"
+                    style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                   >
                     {value}
                   </p>
