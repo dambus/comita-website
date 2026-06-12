@@ -1,0 +1,251 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Our Services",
+    "projects": "View Projects",
+    "operationsMaintenance": "Operation & Maintenance",
+    "about": "About",
+    "team": "Team",
+    "partners": "Clients, Partners & Project References",
+    "sponsorships": "Sponsorships and Donations",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tag": "EPC · O&M · DIGITAL",
+    "headingStart": "Engineering, Automation & Maintenance for ",
+    "headingHighlight": "Gas Infrastructure",
+    "subheading": "Full-cycle engineering, EPC support, operation and maintenance, SCADA and digital solutions for critical gas transmission and energy infrastructure.",
+    "btn1": "VIEW PROJECTS",
+    "btn2": "OUR SERVICES",
+    "stats": {
+      "pipelineBuilt": "PIPELINE BUILT",
+      "gasYear": "GAS / YEAR",
+      "safetyIncidents": "SAFETY INCIDENTS",
+      "specialists": "SPECIALISTS"
+    }
+  },
+  "about": {
+    "overline": "ABOUT THE COMPANY",
+    "heading1": "One Team.",
+    "heading2": "One Standard.",
+    "body1": "Comita Technics DOO Beograd is a full-cycle, highly qualified engineering and maintenance company. We have designed, built, and today maintain critical gas transmission facilities in the region.",
+    "body2": "We operate under transparent SLAs, apply predictive maintenance methods and digital diagnostics, and ensure process control through SCADA and advanced telemetry.",
+    "stats": {
+      "yearsExperience": "Years Combined Experience",
+      "countries": "Countries of Operation",
+      "infrastructure": "Infrastructure Built",
+      "slaCompliance": "SLA Compliance"
+    },
+    "missionHeading": "Our Mission",
+    "missionText": "To design, construct, and service critical energy infrastructure, delivering predictable reliability of supply through strict HSE standards, digital diagnostics, and commitment to SLAs.",
+    "principlesHeading": "Our Principles",
+    "principles": [
+      "Safety First — zero tolerance for incidents.",
+      "Trusted Engineering — solutions built to endure.",
+      "Predictive Maintenance — from reactive to proactive.",
+      "Environmental Commitment — minimizing our footprint.",
+      "Partnership and Transparency — SLAs and open reporting."
+    ],
+    "governmentIssued": "GOVERNMENT ISSUED",
+    "licensesHeading": "Licenses & Certifications",
+    "licensesIssuedBy": "Issued by the Ministry of Construction, Transport and Infrastructure of the Republic of Serbia",
+    "licenses": {
+      "I030G1": {
+        "title": "Civil & Structural Works",
+        "description": "Construction of building structures for oil and gas processing facilities built outside of exploitation fields, with prior approval from the Ministry responsible for mineral resources exploitation, and maintenance of exploitation facilities."
+      },
+      "I031M1": {
+        "title": "Mechanical & Gas Installations",
+        "description": "Construction of thermotechnical, thermoenergetic, process and gas installations of oil and gas pipelines and product pipelines, gas networks with operating pressure exceeding 16 bar, stationary and floating bunkering stations for supplying ships and floating vessels with liquid fuel capacity exceeding 500 m², oil storage facilities, liquid natural gas and petroleum derivatives storage facilities."
+      }
+    },
+    "isoCertified": "ISO Certified",
+    "isoStandards": "International Standards",
+    "iso": {
+      "quality": "Quality Management",
+      "environmental": "Environmental Management",
+      "health": "Health & Safety Management"
+    }
+  },
+  "services": {
+    "overline": "WHAT WE OFFER",
+    "heading": "Complete Energy Solutions",
+    "subheading": "From concept to operation — full-cycle solutions for the energy future.",
+    "epc": {
+      "title": "EPC Full Cycle",
+      "description": "Complete turnkey projects from design through commissioning. Compressor stations, metering units, dispatch centers.",
+      "item0": "Compressor & Metering Stations",
+      "item1": "Dispatch Centers & Control Systems",
+      "item2": "Long-term O&M with guaranteed SLAs"
+    },
+    "renewable": {
+      "title": "Renewable Energy",
+      "description": "Integration of solar and wind power units into existing infrastructure. Hybrid energy complexes and balance management.",
+      "item0": "Solar & Wind Integration",
+      "item1": "Energy Storage & Distribution",
+      "item2": "Hybrid Energy Complexes"
+    },
+    "scada": {
+      "title": "SCADA & Digital",
+      "description": "Advanced telemetry, process control, and digital diagnostics. World-class dispatch center integration and cybersecurity.",
+      "item0": "SCADA & Telemetry Systems",
+      "item1": "Industrial Networks & Cybersecurity",
+      "item2": "Predictive Analytics & CMS"
+    },
+    "consulting": {
+      "title": "Consulting & Engineering",
+      "description": "Project feasibility studies, system audits, technical regulations, and full licensing and certification support.",
+      "item0": "Project Feasibility Studies",
+      "item1": "System Audits & Technical Regs",
+      "item2": "Licensing & Certification"
+    }
+  },
+  "projects": {
+    "overline": "FLAGSHIP PROJECTS",
+    "heading": "Built to Last Decades",
+    "subheading": "Comita Technics DOO Beograd was created as a result of a strategic association of leading specialists with many years of experience in implementing capital energy projects. Our team brings together the additional knowledge and unique experience needed to create a strategically important energy infrastructure at all stages of the project, providing comprehensive solutions based on the highest quality standards",
+    "project1": {
+      "tag": "2019 - 2020 · PIPELINE",
+      "title": "Magistral Gas Pipeline",
+      "subtitle": "A Project of International Significance",
+      "statSerbia": "Serbia pipeline",
+      "statBulgaria": "Bulgaria pipeline",
+      "statValves": "Block valve stations",
+      "statPressure": "Operating pressure",
+      "note": "Delivered: Feb 20, 2019 -> Dec 31, 2020 - record timeline"
+    },
+    "project2": {
+      "tag": "2021 · COMPRESSOR STATION",
+      "title": "Velika Plana Compressor Station",
+      "subtitle": "Engineering Excellence",
+      "statCapacity": "Combined capacity",
+      "statArea": "Site area",
+      "statSignals": "Monitoring signals",
+      "statPiping": "Piping network",
+      "note": "Realized: March 2021 -> September 2021 - on schedule"
+    },
+    "project3": {
+      "tag": "2020 · CONTROL CENTER",
+      "title": "MCC Novi Sad",
+      "subtitle": "Main Control Center",
+      "statStandard": "Operator console standard",
+      "statOps": "Operational environment",
+      "statAutomation": "Automation system",
+      "statLocation": "Location",
+      "note": "Ergonomic design — built for critical infrastructure operations"
+    }
+  },
+  "operationsMaintenance": {
+    "overline": "OPERATION & MAINTENANCE",
+    "heading": "Continuous Reliability in Critical Systems",
+    "subheading": "Long-term operation and maintenance programs with preventive diagnostics, rapid interventions, and disciplined SLA delivery across gas infrastructure.",
+    "panelHeading": "Operational Excellence 2021-2025",
+    "statGas": "Gas transported",
+    "statDowntime": "Unplanned downtime",
+    "statSafety": "Safety incidents",
+    "text0": "Comprehensive maintenance and repair of the Main gas pipeline (interconnector) \"border of Bulgaria - border of Hungary\" from 2025",
+    "text1": "A set of works related to the expansion of the existing underground gas storage facilities \"Banatski Dvor\" from 2025"
+  },
+  "team": {
+    "overline": "OUR TEAM",
+    "heading": "The Team That Builds",
+    "subheading": "60+ specialists 💠 Strong safety performance 💠 High availability of maintained systems 💠 SLA-based maintenance and reporting",
+    "rightHeading": "International Expertise",
+    "cards": {
+      "management": {
+        "title": "28 · Management & Administrative",
+        "text": "Project management, finance, O&M planning, procurement, QA/QC, HSE — ensuring predictable operations."
+      },
+      "engineers": {
+        "title": "18 · Lead Engineers — 24/7",
+        "text": "Unique energy infrastructure expertise providing round-the-clock support and on-call response."
+      },
+      "technicians": {
+        "title": "16 · Field Technicians",
+        "text": "Electricians, mechanics, and adjusters — the hands keeping the system running continuously."
+      }
+    },
+    "photoStats": {
+      "management": "Management & Administrative",
+      "engineers": "Lead Engineers 24/7",
+      "technicians": "Field Technicians"
+    },
+    "multilingual": "Multilingual team — direct communication with clients and partners."
+  },
+  "partners": {
+    "overline": "CLIENTS, PARTNERS & PROJECT REFERENCES",
+    "heading": "Trusted by Major Industry Stakeholders",
+    "subheading": "Global-scale projects are only possible through strategic partnerships with leading industry companies.",
+    "quote": "\"Together, we create infrastructure that lasts decades.\""
+  },
+  "sponsorships": {
+    "overline": "SPONSORSHIPS & DONATIONS",
+    "heading1": "Engineering Progress.",
+    "heading2": "Preserving Heritage.",
+    "body": "Comita Technics DOO Beograd believes that technical excellence and social responsibility go hand in hand. Through our sponsorship and donation program, we support education, cultural heritage, environmental protection, and community development across the region.",
+    "cta": "Learn More & Apply",
+    "cards": {
+      "heritage": {
+        "title": "Cultural Heritage",
+        "text": "Restoring sacred sites and historical landmarks"
+      },
+      "education": {
+        "title": "Education",
+        "text": "Supporting technical training and scholarships"
+      },
+      "environment": {
+        "title": "Environment",
+        "text": "Promoting sustainability and ecological awareness"
+      }
+    }
+  },
+  "contact": {
+    "overline": "GET IN TOUCH",
+    "heading1": "Let's Build Something",
+    "heading2": "That Lasts.",
+    "body": "We are always open to discussing new projects, engineering challenges, and partnership opportunities across the region and beyond.",
+    "headquarters": "Headquarters",
+    "phone": "Phone",
+    "email": "Email",
+    "licenses": "Licenses",
+    "formHeading": "Send a Message",
+    "placeholderName": "Your Name",
+    "placeholderCompany": "Your Company",
+    "placeholderEmail": "Email Address",
+    "placeholderSubject": "Subject",
+    "placeholderMessage": "Your message...",
+    "sendMessage": "SEND MESSAGE"
+  },
+  "footer": {
+    "tagline": "Innovations creating the future.",
+    "navigation": "Navigation",
+    "company": "Company",
+    "specialists": "60+ Specialists On Call 24/7"
+  },
+  "sponsorshipsPage": {
+    "heroOverline": "CORPORATE SOCIAL RESPONSIBILITY",
+    "heroHeading": "Sponsorships & Donations",
+    "heroBody": "Comita Technics DOO Beograd is committed to responsible business practices and contributing to the sustainable development of the communities in which we operate.",
+    "quote": "We are committed to supporting initiatives that create lasting value - for the communities where we live and work, and for the society we are part of.",
+    "content1": "Comita Technics DOO Beograd recognizes that our work shapes not just energy systems - but the communities around them. Our sponsorship and donation activities are focused on initiatives that deliver measurable benefits, encourage professional development, improve quality of life, and contribute to the advancement of local communities.",
+    "content2": "We carefully evaluate all requests to ensure alignment with our corporate values and social responsibility objectives. Priority is given to projects with clear, long-term positive impact on the communities where we operate.",
+    "submitRequestPre": "To submit a",
+    "submitRequestPost": "request, please provide:",
+    "sponsorshipWord": "sponsorship",
+    "donationWord": "donation",
+    "completed": "Completed",
+    "applicationForm": "Application Form for Sponsorship / Donation",
+    "budgetSpecification": "Budget Specification",
+    "budgetNote": "(required only if the requested support involves monetary funds)",
+    "docsChecklist": "Required Documentation Checklist",
+    "docsNote": "(required if more than one partner is involved in the project)",
+    "emailIntro": "All requests and inquiries should be submitted to:",
+    "eligibleText": "Eligible recipients include educational institutions, non-governmental organizations, professional and scientific associations, local community organizations, humanitarian and charitable institutions, and cultural organizations. Applications from individuals are generally not considered unless submitted through a registered organization.",
+    "notifiedText": "All applicants will be notified of the decision following our evaluation process. If the request is approved, the appropriate Sponsorship or Donation Agreement will be concluded with Comita Technics DOO Beograd.",
+    "contactOverline": "GET IN TOUCH",
+    "contactHeading": "Questions About Sponsorships and Donations?",
+    "contactBody": "We review all inquiries and respond as soon as possible.",
+    "sendEmail": "Send an Email",
+    "backToMain": "Back to Main Site"
+  }
+}

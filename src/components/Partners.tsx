@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import useScrollReveal from '../hooks/useScrollReveal'
 import CTPattern from './CTPattern'
 
@@ -27,6 +28,7 @@ const PARTNERS: Partner[] = [
 export default function Partners() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useScrollReveal(ref)
+  const { t } = useTranslation()
 
   return (
     <section
@@ -45,19 +47,19 @@ export default function Partners() {
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            CLIENTS, PARTNERS & PROJECT REFERENCES
+            {t('partners.overline')}
           </p>
           <h2
             className="text-6xl font-bold text-[#0d2a5e] mb-3"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Trusted by Major Industry Stakeholders
+            {t('partners.heading')}
           </h2>
           <p
             className="text-gray-500 text-lg max-w-xl mx-auto"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            Global-scale projects are only possible through strategic partnerships with leading industry companies.
+            {t('partners.subheading')}
           </p>
         </div>
 
@@ -71,7 +73,7 @@ export default function Partners() {
                 <img
                   src={logo}
                   alt={name}
-                  className="max-h-56 max-w-[95%] object-contain filter grayscale-[25%] hover:grayscale-0 transition-all duration-300 opacity-90 hover:opacity-100"
+                  className="max-h-56 max-w-[95%] object-contain filter grayscale-25 hover:grayscale-0 transition-all duration-300 opacity-90 hover:opacity-100"
                 />
               ) : (
                 <span
@@ -95,7 +97,7 @@ export default function Partners() {
           <div className="w-16 h-0.5 bg-[#5bc4f5] mx-auto mb-8 relative z-10" />
 
           <p className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-bold text-white text-center relative z-10">
-            "Together, we create infrastructure that lasts decades."
+            {t('partners.quote')}
           </p>
 
           <p

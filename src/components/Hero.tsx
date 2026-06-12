@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import CTPattern from './CTPattern'
-
-const STATS = [
-  { value: '504 km', label: 'PIPELINE BUILT' },
-  { value: '12.87B m³', label: 'GAS / YEAR' },
-  { value: '0', label: 'SAFETY INCIDENTS' },
-  { value: '60+', label: 'SPECIALISTS' },
-]
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -14,6 +8,14 @@ function scrollTo(id: string) {
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
+  const { t } = useTranslation()
+
+  const STATS = [
+    { value: '504 km', label: t('hero.stats.pipelineBuilt') },
+    { value: '12.87B m³', label: t('hero.stats.gasYear') },
+    { value: '0', label: t('hero.stats.safetyIncidents') },
+    { value: '60+', label: t('hero.stats.specialists') },
+  ]
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -57,7 +59,7 @@ export default function Hero() {
             className="text-xs tracking-[0.2em] text-[#5bc4f5] font-semibold mb-2 sm:mb-3"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            EPC · O&M · DIGITAL
+            {t('hero.tag')}
           </p>
 
           {/* Heading */}
@@ -65,7 +67,7 @@ export default function Hero() {
             className="hero-headline font-['Barlow_Condensed'] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
             style={{ color: '#ffffff' }}
           >
-            Engineering, Automation &amp; Maintenance for <span className="text-[#5bc4f5]">Gas Infrastructure</span>.
+            {t('hero.headingStart')}<span className="text-[#5bc4f5]">{t('hero.headingHighlight')}</span>.
           </h1>
 
           {/* Subheading */}
@@ -73,7 +75,7 @@ export default function Hero() {
             className="text-white/75 text-[15px] sm:text-[17px] md:text-lg font-light max-w-lg mb-4 sm:mb-6"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            Full-cycle engineering, EPC support, operation and maintenance, SCADA and digital solutions for critical gas transmission and energy infrastructure.
+            {t('hero.subheading')}
           </p>
 
           {/* Buttons */}
@@ -87,7 +89,7 @@ export default function Hero() {
                 fontFamily: "'Barlow', sans-serif",
               }}
             >
-              VIEW PROJECTS
+              {t('hero.btn1')}
             </button>
             <button
               onClick={() => scrollTo('services')}
@@ -98,7 +100,7 @@ export default function Hero() {
                 fontFamily: "'Barlow', sans-serif",
               }}
             >
-              OUR SERVICES
+              {t('hero.btn2')}
             </button>
           </div>
         </div>

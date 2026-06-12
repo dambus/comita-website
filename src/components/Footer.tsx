@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { NAV_LINKS } from './navigation'
 
 const PILLS = ['EPC', 'O&M', 'DIGITAL']
@@ -8,6 +9,8 @@ const scrollTo = (id: string) => {
 }
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer style={{ backgroundColor: '#081d42' }} className="py-12 px-8">
       <div className="max-w-7xl mx-auto">
@@ -25,7 +28,7 @@ export default function Footer() {
               className="text-sm mt-3"
               style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'Barlow', sans-serif" }}
             >
-              Innovations creating the future.
+              {t('footer.tagline')}
             </p>
             <div className="flex gap-2 mt-4">
               {PILLS.map((pill) => (
@@ -50,10 +53,10 @@ export default function Footer() {
               className="text-xs tracking-widest mb-4"
               style={{ color: 'rgba(255,255,255,0.3)', fontFamily: "'Barlow', sans-serif" }}
             >
-              Navigation
+              {t('footer.navigation')}
             </p>
             <div className="flex flex-col gap-2">
-              {NAV_LINKS.map(({ label, id }) => (
+              {NAV_LINKS.map(({ labelKey, id }) => (
                 <button
                   key={id}
                   onClick={() => scrollTo(id)}
@@ -62,7 +65,7 @@ export default function Footer() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#ffffff' }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
                 >
-                  {label}
+                  {t(labelKey)}
                 </button>
               ))}
             </div>
@@ -74,7 +77,7 @@ export default function Footer() {
               className="text-xs tracking-widest mb-4"
               style={{ color: 'rgba(255,255,255,0.3)', fontFamily: "'Barlow', sans-serif" }}
             >
-              Company
+              {t('footer.company')}
             </p>
             <div className="flex flex-col gap-2">
               {INFO_LINES.map((line) => (
@@ -95,7 +98,7 @@ export default function Footer() {
                 fontFamily: "'Barlow', sans-serif",
               }}
             >
-              60+ Specialists On Call 24/7
+              {t('footer.specialists')}
             </span>
           </div>
 

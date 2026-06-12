@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { NAV_LINKS, type NavLink } from './navigation'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const navigate = useNavigate()
   const location = useLocation()
+
+  const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'sr' : 'en')
+  const currentLang = i18n.language === 'sr' ? 'СРБ' : 'ENG'
+  const otherLang = i18n.language === 'sr' ? 'ENG' : 'СРБ'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -39,7 +45,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 md:px-10 py-4">
           {/* Logo */}
           <button
-            onClick={() => handleLink({ label: 'Home', id: 'home' })}
+            onClick={() => handleLink({ label: 'Home', id: 'home', labelKey: 'navbar.home' })}
             className="flex items-center bg-transparent border-0 cursor-pointer p-0"
           >
             <img src="/logo/CT_logo_white_text_blue_logo.png" className="h-10 w-auto" alt="Comita Technics DOO Beograd" />
@@ -66,14 +72,37 @@ export default function Navbar() {
                       : 'rgba(255,255,255,0.70)'
                 }}
               >
-                {link.label}
+                {t(link.labelKey)}
               </button>
             ))}
+
+            {/* Language switcher */}
+            <button
+              onClick={toggleLang}
+              className="text-xs font-semibold tracking-widest px-3 py-1.5 transition-all duration-200 cursor-pointer"
+              style={{
+                border: '1px solid rgba(255,255,255,0.3)',
+                color: '#ffffff',
+                fontFamily: "'Barlow', sans-serif",
+                backgroundColor: 'transparent',
+              }}
+              onMouseEnter={e => {
+                ;(e.currentTarget as HTMLButtonElement).style.borderColor = '#5bc4f5'
+                ;(e.currentTarget as HTMLButtonElement).style.color = '#5bc4f5'
+              }}
+              onMouseLeave={e => {
+                ;(e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.3)'
+                ;(e.currentTarget as HTMLButtonElement).style.color = '#ffffff'
+              }}
+              aria-label={`Switch to ${otherLang}`}
+            >
+              {currentLang}
+            </button>
           </div>
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-1"
+            className="md:hidden flex flex-col gap-1.25 bg-transparent border-0 cursor-pointer p-1"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -87,7 +116,7 @@ export default function Navbar() {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
+          className="fixed inset-0 z-100 flex flex-col items-center justify-center"
           style={{ backgroundColor: '#0d2a5e' }}
         >
           <button
@@ -110,9 +139,24 @@ export default function Navbar() {
                     : 'rgba(255,255,255,0.70)',
                 }}
               >
-                {link.label}
+                {t(link.labelKey)}
               </button>
             ))}
+
+            {/* Language switcher — mobile */}
+            <button
+              onClick={toggleLang}
+              className="text-sm font-semibold tracking-widest px-6 py-2 transition-all duration-200 cursor-pointer mt-2"
+              style={{
+                border: '1px solid rgba(255,255,255,0.3)',
+                color: '#ffffff',
+                fontFamily: "'Barlow', sans-serif",
+                backgroundColor: 'transparent',
+              }}
+              aria-label={`Switch to ${otherLang}`}
+            >
+              {currentLang}
+            </button>
           </div>
         </div>
       )}

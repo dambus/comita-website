@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import useScrollReveal from '../hooks/useScrollReveal'
 
 interface Stat {
@@ -16,56 +17,55 @@ interface ProjectCard {
   image: string
 }
 
-const PROJECTS: ProjectCard[] = [
-  {
-    tag: '2019 - 2020 · PIPELINE',
-    title: 'Magistral Gas Pipeline',
-    subtitle: 'A Project of International Significance',
-    image: '/images/horizontal-aboveground-pipeline-in-nature-half-panoramic.jpg',
-    description:
-      'The IDC DOO team acted as general contractor for the Serbian-Bulgarian section - a strategically vital energy corridor, delivered in record time.',
-    stats: [
-      { value: '402 km', label: 'Serbia pipeline' },
-      { value: '102 km', label: 'Bulgaria pipeline' },
-      { value: '22', label: 'Block valve stations' },
-      { value: '7.4 MPa', label: 'Operating pressure' },
-    ],
-    note: 'Delivered: Feb 20, 2019 -> Dec 31, 2020 - record timeline',
-  },
-  {
-    tag: '2021 · COMPRESSOR STATION',
-    title: 'Velika Plana Compressor Station',
-    subtitle: 'Engineering Excellence',
-    description:
-      "Comita Technics DOO Beograd delivered the station's technological core - automation, telemetry, fire and technical safety systems, and communications - all implemented with flawless quality.",
-    stats: [
-      { value: '24 MW', label: 'Combined capacity' },
-      { value: '20 ha', label: 'Site area' },
-      { value: '5,000+', label: 'Monitoring signals' },
-      { value: '100 km+', label: 'Piping network' },
-    ],
-    note: 'Realized: March 2021 -> September 2021 - on schedule',
-    image: '/images/horizontal-aerial-view-plant-panoramic.jpg',
-  },
-  {
-    tag: '2020 · CONTROL CENTER',
-    title: 'MCC Novi Sad',
-    subtitle: 'Main Control Center',
-    image: '/images/horizontal-Projects_mcc_picture.png',
-    description: 'We constructed the Main Control Centre for the national gas pipeline in Serbia from scratch — a Control Centre marked by excellent design and technological supremacy, allowing smooth daily operations.',
-    stats: [
-      { value: 'EN 11064', label: 'Operator console standard' },
-      { value: '24/7', label: 'Operational environment' },
-      { value: 'SCADA', label: 'Automation system' },
-      { value: 'Novi Sad', label: 'Location' },
-    ],
-    note: 'Ergonomic design — built for critical infrastructure operations',
-  },
-]
-
 export default function Projects() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useScrollReveal(ref)
+  const { t } = useTranslation()
+
+  const PROJECTS: ProjectCard[] = [
+    {
+      tag: t('projects.project1.tag'),
+      title: t('projects.project1.title'),
+      subtitle: t('projects.project1.subtitle'),
+      image: '/images/horizontal-aboveground-pipeline-in-nature-half-panoramic.jpg',
+      description: '',
+      stats: [
+        { value: '402 km', label: t('projects.project1.statSerbia') },
+        { value: '102 km', label: t('projects.project1.statBulgaria') },
+        { value: '22', label: t('projects.project1.statValves') },
+        { value: '7.4 MPa', label: t('projects.project1.statPressure') },
+      ],
+      note: t('projects.project1.note'),
+    },
+    {
+      tag: t('projects.project2.tag'),
+      title: t('projects.project2.title'),
+      subtitle: t('projects.project2.subtitle'),
+      description: '',
+      stats: [
+        { value: '24 MW', label: t('projects.project2.statCapacity') },
+        { value: '20 ha', label: t('projects.project2.statArea') },
+        { value: '5,000+', label: t('projects.project2.statSignals') },
+        { value: '100 km+', label: t('projects.project2.statPiping') },
+      ],
+      note: t('projects.project2.note'),
+      image: '/images/horizontal-aerial-view-plant-panoramic.jpg',
+    },
+    {
+      tag: t('projects.project3.tag'),
+      title: t('projects.project3.title'),
+      subtitle: t('projects.project3.subtitle'),
+      image: '/images/horizontal-Projects_mcc_picture.png',
+      description: '',
+      stats: [
+        { value: 'EN 11064', label: t('projects.project3.statStandard') },
+        { value: '24/7', label: t('projects.project3.statOps') },
+        { value: 'SCADA', label: t('projects.project3.statAutomation') },
+        { value: 'Novi Sad', label: t('projects.project3.statLocation') },
+      ],
+      note: t('projects.project3.note'),
+    },
+  ]
 
   return (
     <section
@@ -84,19 +84,19 @@ export default function Projects() {
             className="text-xs tracking-[0.2em] font-semibold mb-3"
             style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
           >
-            FLAGSHIP PROJECTS
+            {t('projects.overline')}
           </p>
           <h2
             className="text-5xl font-bold"
             style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#0d2a5e' }}
           >
-            Built to Last Decades
+            {t('projects.heading')}
           </h2>
           <p
             className="text-gray-400 mt-3"
             style={{ fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
           >
-            Comita Technics DOO Beograd was created as a result of a strategic association of leading specialists with many years of experience in implementing capital energy projects. Our team brings together the additional knowledge and unique experience needed to create a strategically important energy infrastructure at all stages of the project, providing comprehensive solutions based on the highest quality standards
+            {t('projects.subheading')}
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <div key={project.title} className="ct-panel-lg bg-white overflow-hidden flex flex-col">
               <div
-                className="relative overflow-hidden h-52 px-8 py-8 flex-shrink-0"
+                className="relative overflow-hidden h-52 px-8 py-8 shrink-0"
                 style={{ backgroundColor: '#0d2a5e' }}
               >
                 <img
@@ -135,13 +135,6 @@ export default function Projects() {
               </div>
 
               <div className="px-8 py-8">
-                {/* <p
-                  className="text-gray-500 text-sm leading-relaxed mb-6"
-                  style={{ fontFamily: "'Barlow', sans-serif" }}
-                >
-                  {project.description}
-                </p> */}
-
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {project.stats.map(({ value, label }) => (
                     <div key={label} className="ct-panel-sm bg-[#f4f6fa] p-4">

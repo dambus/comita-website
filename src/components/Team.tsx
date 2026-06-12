@@ -1,35 +1,37 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import useScrollReveal from '../hooks/useScrollReveal'
 
-const PHOTO_STATS = [
-  { value: '28', label: 'Management & Administrative' },
-  { value: '18', label: 'Lead Engineers 24/7' },
-  { value: '16', label: 'Field Technicians' },
-]
-
-const TEAM_CARDS = [
-  {
-    number: '28',
-    title: '28 · Management & Administrative',
-    text: 'Project management, finance, O&M planning, procurement, QA/QC, HSE — ensuring predictable operations.',
-  },
-  {
-    number: '18',
-    title: '18 · Lead Engineers — 24/7',
-    text: 'Unique energy infrastructure expertise providing round-the-clock support and on-call response.',
-  },
-  {
-    number: '16',
-    title: '16 · Field Technicians',
-    text: 'Electricians, mechanics, and adjusters — the hands keeping the system running continuously.',
-  },
-]
-
-const LANGUAGES = ['SR', 'EN', 'RU']
+const LANGUAGES = ['SR', 'EN']
 
 export default function Team() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useScrollReveal(ref)
+  const { t } = useTranslation()
+
+  const PHOTO_STATS = [
+    { value: '28', label: t('team.photoStats.management') },
+    { value: '18', label: t('team.photoStats.engineers') },
+    { value: '16', label: t('team.photoStats.technicians') },
+  ]
+
+  const TEAM_CARDS = [
+    {
+      number: '28',
+      title: t('team.cards.management.title'),
+      text: t('team.cards.management.text'),
+    },
+    {
+      number: '18',
+      title: t('team.cards.engineers.title'),
+      text: t('team.cards.engineers.text'),
+    },
+    {
+      number: '16',
+      title: t('team.cards.technicians.title'),
+      text: t('team.cards.technicians.text'),
+    },
+  ]
 
   return (
     <section
@@ -49,23 +51,19 @@ export default function Team() {
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            OUR TEAM
+            {t('team.overline')}
           </p>
           <h2
             className="text-6xl font-bold text-[#0d2a5e] mb-4"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            The Team That Builds
+            {t('team.heading')}
           </h2>
           <p
             className="text-gray-500 text-lg"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            60+ specialists 💠
-            Strong safety performance 💠
-            High availability of maintained systems 💠
-            SLA-based maintenance and reporting 
-
+            {t('team.subheading')}
           </p>
         </div>
 
@@ -76,7 +74,7 @@ export default function Team() {
             <img
               src="/images/horizontal-workers-in-work-equipment-radial-blur-fade.jpg"
               alt="Comita Technics DOO Beograd team"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-125 object-cover"
               style={{ objectPosition: 'center 30%' }}
             />
             <div
@@ -107,7 +105,7 @@ export default function Team() {
               className="text-4xl font-bold text-[#0d2a5e] mb-6"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
-              International Expertise
+              {t('team.rightHeading')}
             </h3>
 
             {/* Team cards */}
@@ -170,7 +168,7 @@ export default function Team() {
               ))}
             </div>
             <p className="text-gray-400" style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}>
-              Multilingual team — direct communication with clients and partners.
+              {t('team.multilingual')}
             </p>
           </div>
         </div>

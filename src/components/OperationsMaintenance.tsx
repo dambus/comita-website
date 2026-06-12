@@ -1,21 +1,23 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import useScrollReveal from '../hooks/useScrollReveal'
 import CTPattern from './CTPattern'
-
-const OPS_STATS = [
-  { value: '12.87B m3/yr', label: 'Gas transported' },
-  { value: '0 hours', label: 'Unplanned downtime' },
-  { value: '0', label: 'Safety incidents' },
-]
-
-const OPS_SUBTEXTS = [
-  'Comprehensive maintenance and repair of the Main gas pipeline (interconnector) "border of Bulgaria - border of Hungary" from 2025',
-  'A set of works related to the expansion of the existing underground gas storage facilities "Banatski Dvor" from 2025',
-]
 
 export default function OperationsMaintenance() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useScrollReveal(ref)
+  const { t } = useTranslation()
+
+  const OPS_STATS = [
+    { value: '12.87B m3/yr', label: t('operationsMaintenance.statGas') },
+    { value: '0 hours', label: t('operationsMaintenance.statDowntime') },
+    { value: '0', label: t('operationsMaintenance.statSafety') },
+  ]
+
+  const OPS_SUBTEXTS = [
+    t('operationsMaintenance.text0'),
+    t('operationsMaintenance.text1'),
+  ]
 
   return (
     <section
@@ -34,19 +36,19 @@ export default function OperationsMaintenance() {
             className="text-xs tracking-[0.2em] font-semibold mb-3 text-[#5bc4f5]"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            OPERATION & MAINTENANCE
+            {t('operationsMaintenance.overline')}
           </p>
           <h2
             className="text-5xl font-bold text-[#0d2a5e] mb-4"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Continuous Reliability in Critical Systems
+            {t('operationsMaintenance.heading')}
           </h2>
           <p
             className="text-gray-500 max-w-3xl mx-auto"
             style={{ fontFamily: "'Barlow', sans-serif", fontSize: '17px' }}
           >
-            Long-term operation and maintenance programs with preventive diagnostics, rapid interventions, and disciplined SLA delivery across gas infrastructure.
+            {t('operationsMaintenance.subheading')}
           </p>
         </div>
 
@@ -59,7 +61,7 @@ export default function OperationsMaintenance() {
                   className="text-3xl md:text-4xl font-bold text-white"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                 >
-                  Operational Excellence 2021-2025
+                  {t('operationsMaintenance.panelHeading')}
                 </h3>
                 <div className="w-12 h-0.5 bg-[#5bc4f5] mt-2" />
               </div>

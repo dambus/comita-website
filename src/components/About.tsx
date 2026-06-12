@@ -1,48 +1,48 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import useScrollReveal from '../hooks/useScrollReveal'
 import CTPattern from './CTPattern'
 
-const PRINCIPLES = [
-  'Safety First — zero tolerance for incidents.',
-  'Trusted Engineering — solutions built to endure.',
-  'Predictive Maintenance — from reactive to proactive.',
-  'Environmental Commitment — minimizing our footprint.',
-  'Partnership and Transparency — SLAs and open reporting.',
-]
-
-const LICENSES_DETAILED = [
-  {
-    code: 'I030G1',
-    title: 'Civil & Structural Works',
-    description:
-      'Construction of building structures for oil and gas processing facilities built outside of exploitation fields, with prior approval from the Ministry responsible for mineral resources exploitation, and maintenance of exploitation facilities.',
-  },
-  {
-    code: 'I031M1',
-    title: 'Mechanical & Gas Installations',
-    description:
-      'Construction of thermotechnical, thermoenergetic, process and gas installations of oil and gas pipelines and product pipelines, gas networks with operating pressure exceeding 16 bar, stationary and floating bunkering stations for supplying ships and floating vessels with liquid fuel capacity exceeding 500 m², oil storage facilities, liquid natural gas and petroleum derivatives storage facilities.',
-  },
-]
-
-const ISO_CERTS = [
-  { code: 'ISO 9001:2015', label: 'Quality Management' },
-  { code: 'ISO 14001:2015', label: 'Environmental Management' },
-  { code: 'ISO 45001:2018', label: 'Health & Safety Management' },
-]
-
 const PILLS = ['EPC', 'O&M', 'DIGITAL', 'SCADA']
-
-const STATS = [
-  { number: '25+', label: 'Years Combined Experience' },
-  { number: '2', label: 'Countries of Operation' },
-  { number: '504 km', label: 'Infrastructure Built' },
-  { number: '100%', label: 'SLA Compliance' },
-]
 
 export default function About() {
   const ref = useRef<HTMLElement>(null)
   const isVisible = useScrollReveal(ref)
+  const { t } = useTranslation()
+
+  const STATS = [
+    { number: '25+', label: t('about.stats.yearsExperience') },
+    { number: '2', label: t('about.stats.countries') },
+    { number: '504 km', label: t('about.stats.infrastructure') },
+    { number: '100%', label: t('about.stats.slaCompliance') },
+  ]
+
+  const PRINCIPLES = [
+    t('about.principles.0'),
+    t('about.principles.1'),
+    t('about.principles.2'),
+    t('about.principles.3'),
+    t('about.principles.4'),
+  ]
+
+  const LICENSES_DETAILED = [
+    {
+      code: 'I030G1',
+      title: t('about.licenses.I030G1.title'),
+      description: t('about.licenses.I030G1.description'),
+    },
+    {
+      code: 'I031M1',
+      title: t('about.licenses.I031M1.title'),
+      description: t('about.licenses.I031M1.description'),
+    },
+  ]
+
+  const ISO_CERTS = [
+    { code: 'ISO 9001:2015', label: t('about.iso.quality') },
+    { code: 'ISO 14001:2015', label: t('about.iso.environmental') },
+    { code: 'ISO 45001:2018', label: t('about.iso.health') },
+  ]
 
   return (
     <section
@@ -68,34 +68,30 @@ export default function About() {
               className="text-xs tracking-[0.2em] font-semibold mb-4"
               style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
             >
-              ABOUT THE COMPANY
+              {t('about.overline')}
             </p>
 
             <h2
               className="text-5xl md:text-6xl font-bold leading-tight mb-6"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#0d2a5e' }}
             >
-              One Team.
+              {t('about.heading1')}
               <br />
-              One Standard.
+              {t('about.heading2')}
             </h2>
 
             <p
               className="text-gray-500 max-w-lg leading-relaxed mb-4"
               style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '17px' }}
             >
-              Comita Technics DOO Beograd is a full-cycle, highly qualified engineering
-              and maintenance company. We have designed, built, and today maintain
-              critical gas transmission facilities in the region.
+              {t('about.body1')}
             </p>
 
             <p
               className="text-gray-500 max-w-lg leading-relaxed mb-10"
               style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '17px' }}
             >
-              We operate under transparent SLAs, apply predictive maintenance methods
-              and digital diagnostics, and ensure process control through SCADA and
-              advanced telemetry.
+              {t('about.body2')}
             </p>
 
             {/* Stat boxes */}
@@ -152,15 +148,13 @@ export default function About() {
                 className="text-2xl font-bold text-white mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
-                Our Mission
+                {t('about.missionHeading')}
               </h3>
               <p
                 className="text-white/75 leading-relaxed mb-8"
                 style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '17px' }}
               >
-                To design, construct, and service critical energy infrastructure,
-                delivering predictable reliability of supply through strict HSE
-                standards, digital diagnostics, and commitment to SLAs.
+                {t('about.missionText')}
               </p>
             </div>
 
@@ -173,13 +167,13 @@ export default function About() {
                 className="text-xl font-bold text-white mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
-                Our Principles
+                {t('about.principlesHeading')}
               </h3>
               <ul className="flex flex-col gap-0">
                 {PRINCIPLES.map((p) => (
                   <li key={p} className="flex items-start gap-3 py-2 border-b border-white/5 last:border-0">
                     <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2"
+                      className="w-1.5 h-1.5 rounded-full shrink-0 mt-2"
                       style={{ backgroundColor: '#5bc4f5' }}
                     />
                     <span
@@ -206,20 +200,20 @@ export default function About() {
                 className="text-xs tracking-[0.2em] font-semibold mb-2"
                 style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
               >
-                GOVERNMENT ISSUED
+                {t('about.governmentIssued')}
               </p>
               <h3
                 className="text-4xl font-bold"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#0d2a5e' }}
               >
-                Licenses & Certifications
+                {t('about.licensesHeading')}
               </h3>
             </div>
             <p
               className="text-xs text-gray-400 max-w-xs md:text-right"
               style={{ fontFamily: "'Barlow', sans-serif" }}
             >
-              Issued by the Ministry of Construction, Transport and Infrastructure of the Republic of Serbia
+              {t('about.licensesIssuedBy')}
             </p>
           </div>
 
@@ -234,7 +228,7 @@ export default function About() {
               >
                 <div className="flex items-start gap-4 mb-5">
                   <div
-                    className="flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                    className="shrink-0 w-10 h-10 flex items-center justify-center"
                     style={{ backgroundColor: 'rgba(13,42,94,0.08)' }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d2a5e" strokeWidth="1.5">
@@ -269,7 +263,7 @@ export default function About() {
             <div className="ct-panel-lg bg-[#0d2a5e] p-8 flex flex-col">
               <div className="flex items-start gap-4 mb-6">
                 <div
-                  className="flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                  className="shrink-0 w-10 h-10 flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(91,196,245,0.15)' }}
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
@@ -282,13 +276,13 @@ export default function About() {
                     className="text-xl font-bold text-white leading-none"
                     style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                   >
-                    ISO Certified
+                    {t('about.isoCertified')}
                   </p>
                   <p
                     className="text-xs tracking-widest mt-1 uppercase"
                     style={{ color: '#5bc4f5', fontFamily: "'Barlow', sans-serif" }}
                   >
-                    International Standards
+                    {t('about.isoStandards')}
                   </p>
                 </div>
               </div>
@@ -301,7 +295,7 @@ export default function About() {
                     style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
                   >
                     <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
                       style={{ backgroundColor: '#5bc4f5' }}
                     />
                     <div>
