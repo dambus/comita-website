@@ -47,6 +47,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sponsorships" element={<SponsorshipsPage />} />
+        <Route path="/sponsorship" element={<SponsorshipsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
