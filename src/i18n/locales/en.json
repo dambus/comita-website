@@ -64,7 +64,11 @@
     "iso": {
       "quality": "Quality Management",
       "environmental": "Environmental Management",
-      "health": "Health & Safety Management"
+      "health": "Health & Safety Management",
+      "welding": "Welding Quality Requirements",
+      "pressureEquipment": "Pressure Equipment Directive",
+      "pressureVessels": "Unfired Pressure Vessels",
+      "steelStructures": "Execution of Steel Structures – EXC3"
     }
   },
   "services": {
@@ -106,7 +110,7 @@
     "subheading": "Comita Technics DOO Beograd was created as a result of a strategic association of leading specialists with many years of experience in implementing capital energy projects. Our team brings together the additional knowledge and unique experience needed to create a strategically important energy infrastructure at all stages of the project, providing comprehensive solutions based on the highest quality standards",
     "project1": {
       "tag": "2019 - 2020 · PIPELINE",
-      "title": "Magistral Gas Pipeline",
+      "title": "Transmission Gas Pipeline",
       "subtitle": "A Project of International Significance",
       "statSerbia": "Serbia pipeline",
       "statBulgaria": "Bulgaria pipeline",
@@ -205,6 +209,7 @@
     "heading2": "That Lasts.",
     "body": "We are always open to discussing new projects, engineering challenges, and partnership opportunities across the region and beyond.",
     "headquarters": "Headquarters",
+    "address": "Beograd, Novi-Beograd\nBulevar Mihajla Pupina 165G",
     "phone": "Phone",
     "email": "Email",
     "licenses": "Licenses",
@@ -219,8 +224,18 @@
   "footer": {
     "tagline": "Innovations creating the future.",
     "navigation": "Navigation",
-    "company": "Company",
+    "company": "Comita Technics DOO Beograd",
     "specialists": "60+ Specialists On Call 24/7"
+  },
+  "seo": {
+    "home": {
+      "title": "Comita Technics DOO Beograd | EPC, O&M and Energy Infrastructure",
+      "description": "Comita Technics DOO Beograd delivers EPC, operations and maintenance, SCADA, and engineering services for energy infrastructure across Serbia and the wider region."
+    },
+    "sponsorships": {
+      "title": "Sponsorships and Donations | Comita Technics DOO Beograd",
+      "description": "Learn about the Comita Technics DOO Beograd sponsorship and donation program, application process, required documents, and community impact priorities."
+    }
   },
   "sponsorshipsPage": {
     "heroOverline": "CORPORATE SOCIAL RESPONSIBILITY",

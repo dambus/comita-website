@@ -10,7 +10,7 @@ export default function Contact() {
   const DETAILS = [
     {
       label: t('contact.headquarters'),
-      value: 'Beograd, Novi-Beograd\nBulevar Mihajla Pupina 165G',
+      value: t('contact.address'),
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -21,6 +21,7 @@ export default function Contact() {
     {
       label: t('contact.phone'),
       value: '+381 11 3818100',
+      href: 'tel:+381113818100',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
@@ -30,6 +31,7 @@ export default function Contact() {
     {
       label: t('contact.email'),
       value: 'office@cmtech.rs',
+      href: 'mailto:office@cmtech.rs',
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bc4f5" strokeWidth="1.5">
           <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -76,7 +78,7 @@ export default function Contact() {
           </p>
 
           <div className="flex flex-col gap-6">
-            {DETAILS.map(({ label, value, icon }) => (
+            {DETAILS.map(({ label, value, href, icon }) => (
               <div key={label} className="flex items-start gap-4">
                 <div className="ct-panel-sm w-12 h-12 bg-[#f4f6fa] flex items-center justify-center shrink-0">
                   {icon}
@@ -89,10 +91,10 @@ export default function Contact() {
                     {label}
                   </p>
                   <p
-                    className="text-gray-500 mt-0.5"
+                    className="text-gray-500 mt-0.5 whitespace-pre-line"
                     style={{ fontFamily: "'Barlow', sans-serif", fontSize: '15px' }}
                   >
-                    <a href="mailto:office@comita.rs">{value}</a>
+                    {href ? <a href={href}>{value}</a> : value}
                   </p>
                 </div>
               </div>

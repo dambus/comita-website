@@ -42,6 +42,10 @@ export default function About() {
     { code: 'ISO 9001:2015', label: t('about.iso.quality') },
     { code: 'ISO 14001:2015', label: t('about.iso.environmental') },
     { code: 'ISO 45001:2018', label: t('about.iso.health') },
+    { code: 'EN ISO 3834-2:2006', label: t('about.iso.welding') },
+    { code: 'PED 2014/68/EU', label: t('about.iso.pressureEquipment') },
+    { code: 'AD2000 HPO/HP100R', label: t('about.iso.pressureVessels') },
+    { code: 'DIN EN 1090-1/2 EXC3', label: t('about.iso.steelStructures') },
   ]
 
   return (

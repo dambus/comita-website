@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import SeoManager from './components/SeoManager'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Projects from './components/Projects'
@@ -43,6 +44,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <SeoManager />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

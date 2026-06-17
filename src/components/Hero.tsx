@@ -8,7 +8,8 @@ function scrollTo(id: string) {
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isSerbian = i18n.language === 'sr'
 
   const STATS = [
     { value: '504 km', label: t('hero.stats.pipelineBuilt') },
@@ -64,7 +65,11 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className="hero-headline font-['Barlow_Condensed'] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-3 sm:mb-4"
+            className={`hero-headline text-4xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4 ${
+              isSerbian
+                ? "font-['Barlow'] font-semibold leading-[1.08] tracking-[-0.02em]"
+                : "font-['Barlow_Condensed'] font-bold leading-tight tracking-tight"
+            }`}
             style={{ color: '#ffffff' }}
           >
             {t('hero.headingStart')}<span className="text-[#5bc4f5]">{t('hero.headingHighlight')}</span>.
