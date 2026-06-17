@@ -12,7 +12,14 @@
       "PowerShell(New-Item -ItemType Directory -Force \"h:\\\\Dev\\\\2026\\\\comita-website\\\\src\\\\pages\")",
       "PowerShell(Rename-Item -Path \"g:\\\\Dev\\\\2026\\\\comita-website\\\\public\\\\documents\\\\Obrazac za priijavu za sponzorstvo i donaciju.docx\" -NewName \"prijava-sponzorstvo-donacija.docx\")",
       "PowerShell(Rename-Item -Path \"g:\\\\Dev\\\\2026\\\\comita-website\\\\public\\\\documents\\\\Obrazac specifikacije budzeta projekta.docx\" -NewName \"specifikacija-budzeta.docx\")",
-      "PowerShell(Rename-Item -Path \"g:\\\\Dev\\\\2026\\\\comita-website\\\\public\\\\documents\\\\spisak obavezne dokumentacije za podnosenje prijave za sponzorstvo i donaciju.docx\" -NewName \"spisak-dokumentacije.docx\")"
+      "PowerShell(Rename-Item -Path \"g:\\\\Dev\\\\2026\\\\comita-website\\\\public\\\\documents\\\\spisak obavezne dokumentacije za podnosenje prijave za sponzorstvo i donaciju.docx\" -NewName \"spisak-dokumentacije.docx\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"try { JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/locales/sr.json','utf8'\\)\\); console.log\\('OK'\\); } catch\\(e\\) { console.log\\(e.message\\); }\")",
+      "Bash(node)",
+      "Bash(node -e \"try { JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/locales/sr.json','utf8'\\)\\); console.log\\('sr.json is valid JSON'\\); } catch\\(e\\) { console.log\\('ERROR:', e.message\\); }\")",
+      "Bash(node -e \"try { JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/locales/en.json','utf8'\\)\\); console.log\\('en.json is valid JSON'\\); } catch\\(e\\) { console.log\\('ERROR:', e.message\\); }\")",
+      "Bash(git add *)",
+      "Bash(git push *)"
     ]
   }
 }
