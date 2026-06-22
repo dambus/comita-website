@@ -12,13 +12,14 @@
   },
   "hero": {
     "tag": "EPC · O&M · DIGITAL",
-    "headingStart": "Engineering, Automation & Maintenance for ",
+    "headingStart": "Engineering, Automation & Maintenance of ",
     "headingHighlight": "Gas Infrastructure",
     "subheading": "Full-cycle engineering, EPC support, operation and maintenance, SCADA and digital solutions for critical gas transmission and energy infrastructure.",
     "btn1": "VIEW PROJECTS",
     "btn2": "OUR SERVICES",
     "stats": {
       "pipelineBuilt": "PIPELINE BUILT",
+      "gasValue": "12.87B m³",
       "gasYear": "GAS / YEAR",
       "safetyIncidents": "SAFETY INCIDENTS",
       "specialists": "SPECIALISTS"
@@ -46,7 +47,7 @@
       "Environmental Commitment — minimizing our footprint.",
       "Partnership and Transparency — SLAs and open reporting."
     ],
-    "governmentIssued": "GOVERNMENT ISSUED",
+    "governmentIssued": "ISSUED BY STATE AUTHORITIES",
     "licensesHeading": "Licenses & Certifications",
     "licensesIssuedBy": "Issued by the Ministry of Construction, Transport and Infrastructure of the Republic of Serbia",
     "licenses": {
@@ -106,8 +107,8 @@
   },
   "projects": {
     "overline": "FLAGSHIP PROJECTS",
-    "heading": "Built to Last Decades",
-    "subheading": "Comita Technics DOO Beograd was created as a result of a strategic association of leading specialists with many years of experience in implementing capital energy projects. Our team brings together the additional knowledge and unique experience needed to create a strategically important energy infrastructure at all stages of the project, providing comprehensive solutions based on the highest quality standards",
+    "heading": "Built to last for decades",
+    "subheading": "Comita Technics DOO Beograd was founded through the strategic collaboration of industry-leading experts with decades of experience in the execution of large-scale energy projects. Our team combines specialized knowledge and proven expertise to support the development of critical energy infrastructure at every stage of the project lifecycle, delivering integrated solutions that meet the highest standards of quality, safety, and performance.",
     "project1": {
       "tag": "2019 - 2020 · PIPELINE",
       "title": "Transmission Gas Pipeline",
@@ -136,6 +137,7 @@
       "statOps": "Operational environment",
       "statAutomation": "Automation system",
       "statLocation": "Location",
+      "statLocationValue": "Novi Sad",
       "note": "Ergonomic design — built for critical infrastructure operations"
     }
   },
@@ -144,7 +146,9 @@
     "heading": "Continuous Reliability in Critical Systems",
     "subheading": "Long-term operation and maintenance programs with preventive diagnostics, rapid interventions, and disciplined SLA delivery across gas infrastructure.",
     "panelHeading": "Operational Excellence 2021-2025",
+    "statGasValue": "12.87B m3/yr",
     "statGas": "Gas transported",
+    "statDowntimeValue": "0 hours",
     "statDowntime": "Unplanned downtime",
     "statSafety": "Safety incidents",
     "text0": "Comprehensive maintenance and repair of the Main gas pipeline (interconnector) \"border of Bulgaria - border of Hungary\" from 2025",
@@ -157,7 +161,7 @@
     "rightHeading": "International Expertise",
     "cards": {
       "management": {
-        "title": "28 · Management & Administrative",
+        "title": "28 · Management & Administrative Staff",
         "text": "Project management, finance, O&M planning, procurement, QA/QC, HSE — ensuring predictable operations."
       },
       "engineers": {
@@ -166,11 +170,11 @@
       },
       "technicians": {
         "title": "16 · Field Technicians",
-        "text": "Electricians, mechanics, and adjusters — the hands keeping the system running continuously."
+        "text": "Electricians, mechanics, and technicians — the hands that keep the system running continuously."
       }
     },
     "photoStats": {
-      "management": "Management & Administrative",
+      "management": "Management & Administrative Staff",
       "engineers": "Lead Engineers 24/7",
       "technicians": "Field Technicians"
     },
@@ -180,7 +184,7 @@
     "overline": "CLIENTS, PARTNERS & PROJECT REFERENCES",
     "heading": "Trusted by Major Industry Stakeholders",
     "subheading": "Global-scale projects are only possible through strategic partnerships with leading industry companies.",
-    "quote": "\"Together, we create infrastructure that lasts decades.\""
+    "quote": "\"Together, we build infrastructure that lasts for decades.\""
   },
   "sponsorships": {
     "overline": "SPONSORSHIPS & DONATIONS",
@@ -219,7 +223,11 @@
     "placeholderEmail": "Email Address",
     "placeholderSubject": "Subject",
     "placeholderMessage": "Your message...",
-    "sendMessage": "SEND MESSAGE"
+    "sendMessage": "SEND MESSAGE",
+    "sending": "SENDING...",
+    "formSuccess": "Message sent. We will get back to you shortly.",
+    "formError": "Something went wrong. Please try again or email us directly.",
+    "captchaRequired": "Please complete the CAPTCHA before sending."
   },
   "footer": {
     "tagline": "Innovations creating the future.",

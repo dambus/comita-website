@@ -153,7 +153,7 @@ export default function SponsorshipsPage() {
               {' '}{t('sponsorshipsPage.budgetNote')}
             </li>
             <li style={{ marginBottom: '8px', fontFamily: "'Barlow', sans-serif", fontSize: '17px', color: '#2d3748' }}>
-              {t('sponsorshipsPage.completed')}{' '}
+              {t('sponsorshipsPage.completed2')}{' '}
               <a
                 href="/documents/spisak-dokumentacije.docx"
                 download

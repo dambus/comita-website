@@ -19,7 +19,8 @@
       "Bash(node -e \"try { JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/locales/sr.json','utf8'\\)\\); console.log\\('sr.json is valid JSON'\\); } catch\\(e\\) { console.log\\('ERROR:', e.message\\); }\")",
       "Bash(node -e \"try { JSON.parse\\(require\\('fs'\\).readFileSync\\('src/i18n/locales/en.json','utf8'\\)\\); console.log\\('en.json is valid JSON'\\); } catch\\(e\\) { console.log\\('ERROR:', e.message\\); }\")",
       "Bash(git add *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(npm run *)"
     ]
   }
 }

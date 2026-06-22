@@ -9,8 +9,8 @@ export default function OperationsMaintenance() {
   const { t } = useTranslation()
 
   const OPS_STATS = [
-    { value: '12.87B m3/yr', label: t('operationsMaintenance.statGas') },
-    { value: '0 hours', label: t('operationsMaintenance.statDowntime') },
+    { value: t('operationsMaintenance.statGasValue'), label: t('operationsMaintenance.statGas') },
+    { value: t('operationsMaintenance.statDowntimeValue'), label: t('operationsMaintenance.statDowntime') },
     { value: '0', label: t('operationsMaintenance.statSafety') },
   ]
 
@@ -70,7 +70,7 @@ export default function OperationsMaintenance() {
                 {OPS_STATS.map(({ value, label }) => (
                   <div key={label} className="flex flex-col items-center md:items-start">
                     <span
-                      className="text-4xl font-bold text-[#5bc4f5]"
+                      className="text-4xl font-bold text-[#5bc4f5] whitespace-pre-line"
                       style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                     >
                       {value}

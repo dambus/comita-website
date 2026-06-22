@@ -13,7 +13,7 @@ export default function Hero() {
 
   const STATS = [
     { value: '504 km', label: t('hero.stats.pipelineBuilt') },
-    { value: '12.87B m³', label: t('hero.stats.gasYear') },
+    { value: t('hero.stats.gasValue'), label: t('hero.stats.gasYear') },
     { value: '0', label: t('hero.stats.safetyIncidents') },
     { value: '60+', label: t('hero.stats.specialists') },
   ]
@@ -72,7 +72,7 @@ export default function Hero() {
             }`}
             style={{ color: '#ffffff' }}
           >
-            {t('hero.headingStart')}<span className="text-[#5bc4f5]">{t('hero.headingHighlight')}</span>.
+            {t('hero.headingStart')}<span className="text-[#5bc4f5]">{t('hero.headingHighlight')}</span>
           </h1>
 
           {/* Subheading */}

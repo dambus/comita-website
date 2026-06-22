@@ -5,6 +5,7 @@ import useScrollReveal from '../hooks/useScrollReveal'
 interface Stat {
   value: string
   label: string
+  small?: boolean
 }
 
 interface ProjectCard {
@@ -61,7 +62,7 @@ export default function Projects() {
         { value: 'EN 11064', label: t('projects.project3.statStandard') },
         { value: '24/7', label: t('projects.project3.statOps') },
         { value: 'SCADA', label: t('projects.project3.statAutomation') },
-        { value: 'Novi Sad', label: t('projects.project3.statLocation') },
+        { value: t('projects.project3.statLocationValue'), label: t('projects.project3.statLocation'), small: true },
       ],
       note: t('projects.project3.note'),
     },
@@ -136,10 +137,10 @@ export default function Projects() {
 
               <div className="px-8 py-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {project.stats.map(({ value, label }) => (
+                  {project.stats.map(({ value, label, small }) => (
                     <div key={label} className="ct-panel-sm bg-[#f4f6fa] p-4">
                       <p
-                        className="text-3xl font-bold text-[#0d2a5e]"
+                        className={`font-bold text-[#0d2a5e] ${small ? 'text-2xl font-bold' : 'text-3xl'}`}
                         style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                       >
                         {value}
