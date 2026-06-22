@@ -52,7 +52,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden nav:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
@@ -102,7 +102,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.25 bg-transparent border-0 cursor-pointer p-1"
+            className="nav:hidden flex flex-col gap-1.25 bg-transparent border-0 cursor-pointer p-1"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >

@@ -23,6 +23,15 @@ export default function Contact() {
 
   const isDev = import.meta.env.DEV
 
+  if (isDev) {
+    if (!import.meta.env.VITE_WEB3FORMS_KEY) {
+      console.warn('[Contact] VITE_WEB3FORMS_KEY is not set. Check your .env file.')
+    }
+    if (!import.meta.env.VITE_HCAPTCHA_SITEKEY) {
+      console.warn('[Contact] VITE_HCAPTCHA_SITEKEY is not set. Check your .env file.')
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!isDev && !captchaToken) {
@@ -33,9 +42,19 @@ export default function Contact() {
     setStatus('sending')
     try {
       const formData = new FormData(e.currentTarget)
+
+      // hCaptcha widget injects g-recaptcha-response into the DOM; Web3Forms Free
+      // plan rejects any submission containing that field as a Pro reCaptcha attempt.
+      formData.delete('g-recaptcha-response')
+
       formData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY)
       formData.set('subject', `[cmtech.rs] ${form.subject || 'Contact form'}`)
-      if (!isDev && captchaToken) formData.set('h-captcha-response', captchaToken)
+
+      if (!isDev && captchaToken) {
+        formData.set('h-captcha-response', captchaToken)
+      } else {
+        formData.delete('h-captcha-response')
+      }
 
       const res = await fetch(WEB3FORMS_URL, { method: 'POST', body: formData })
       const data = await res.json()

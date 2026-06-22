@@ -7,6 +7,10 @@
   --gray-bg: #f4f6fa;
 }
 
+@theme {
+  --breakpoint-nav: 1400px;
+}
+
 html {
   scroll-behavior: smooth;
 }
